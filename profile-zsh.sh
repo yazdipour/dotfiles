@@ -69,7 +69,14 @@ ZSH_THEME="junkfood"
 plugins=(
   git
   osx
+  extract
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
+# TO INSTALL zsh-..
+# git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# sudo apt-get install zsh-syntax-highlighting
+# 
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,5 +143,9 @@ alias c="code"
 alias cr="code -r"
 alias c11="gcc -std=c11 "
 alias watch="npm run serve"
+
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools
 export PATH=${PATH}:~/Library/Android/sdk/tools
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
