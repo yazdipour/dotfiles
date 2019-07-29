@@ -1,6 +1,4 @@
 eval $( dircolors -b $HOME/.dir_colors )
-# tor  --HTTPTunnelPort 8118
-
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -101,6 +99,16 @@ source $ZSH/oh-my-zsh.sh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # aliases
+# Always run ls after cd
+function cd {
+  builtin cd "$@" && ls
+}
+
+# Prompt user before overwriting any files
+alias cp='cp --interactive'
+alias mv='mv --interactive'
+alias rm='rm --interactive'
+
 alias ex="exit"
 alias bye="poweroff"
 alias cls="clear"
@@ -143,6 +151,7 @@ alias c="code"
 alias cr="code -r"
 alias c11="gcc -std=c11 "
 alias watch="npm run serve"
+alias tor="tor --HTTPTunnelPort 8118"
 
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools
 export PATH=${PATH}:~/Library/Android/sdk/tools
