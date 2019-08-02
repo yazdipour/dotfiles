@@ -108,7 +108,7 @@ function cd {
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
-
+alias cat='bat'
 alias ex="exit"
 alias bye="poweroff"
 alias cls="clear"
