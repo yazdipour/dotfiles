@@ -35,6 +35,7 @@ function turn-on-hotspot { netsh wla start ho}
 function turn-off-hotspot { netsh wla stop ho}
 Set-Alias w turn-on-hotspot
 Set-Alias w! turn-off-hotspot
+function wifi{netsh wlan show networks mode=Bssid}
 
 # ANDROID
 function adblog($_) {ADB logcat $_}
