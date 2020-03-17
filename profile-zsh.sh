@@ -152,9 +152,10 @@ alias cr="code -r"
 alias c11="gcc -std=c11 "
 alias watch="npm run serve"
 alias tor="tor --HTTPTunnelPort 8118"
+alias ifconfig='ip -c a'
 
-export PATH=${PATH}:~/Library/Android/sdk/platform-tools
-export PATH=${PATH}:~/Library/Android/sdk/tools
+# export PATH=${PATH}:~/Library/Android/sdk/platform-tools
+# export PATH=${PATH}:~/Library/Android/sdk/tools
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
