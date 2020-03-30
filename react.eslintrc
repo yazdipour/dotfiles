@@ -1,6 +1,13 @@
 {
-  "extends": ["airbnb", "prettier", "react-app", "plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier", "react"],
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "warn",
@@ -11,3 +18,5 @@
     "class-methods-use-this": "off"
   }
 }
+// https://gist.github.com/bradtraversy/aab26d1e8983d9f8d79be1a9ca894ab4
+// https://github.com/yannickcr/eslint-plugin-react
