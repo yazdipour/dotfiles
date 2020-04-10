@@ -71,6 +71,10 @@ function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string
 Set-Alias c code
 function cr($_){code $_ -r}
 
+# BEEP
+function beep(){[console]::beep(500,300)}
+function beeep(){[console]::beep(2000,500)}
+
 # ALIAS
 Set-Alias l ls
 Set-Alias e explorer
