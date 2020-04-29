@@ -153,6 +153,7 @@ alias c11="gcc -std=c11 "
 alias watch="npm run serve"
 alias tor="tor --HTTPTunnelPort 8118"
 alias ifconfig='ip -c a'
+alias zu='sudo -s'
 
 # export PATH=${PATH}:~/Library/Android/sdk/platform-tools
 # export PATH=${PATH}:~/Library/Android/sdk/tools
