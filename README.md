@@ -15,23 +15,24 @@ notepad $profile
 ```
 
 ## NVim
-[▶ My NeoVimRc](init.vim)
+[▶ My init.vim](init.vim)
 
 ## Zsh
-[▶ My zshrc](profile-zsh.sh)
-
-`nano ~/.zshrc`
+[▶ My .zshrc](profile-zsh.sh)
 
 ## dir_colors
 
 To set the dir_colors: `eval $( dircolors -b $HOME/.dir_colors )`
 
 * dircolors_green
-
-* dir_colors_lightyellow
-https://github.com/ivoarch/dircolors-zenburn
-![](https://github.com/ivoarch/dircolors-zenburn/raw/master/img/screenshot.png)
+  * [File](dir_colors_green)
 
 * dir_colors_lightblue
-https://github.com/arcticicestudio/nord-dircolors
+  * [File](dir_colors_lightblue)
+  * https://github.com/arcticicestudio/nord-dircolors
 ![](https://raw.githubusercontent.com/arcticicestudio/nord-docs/develop/assets/images/ports/dircolors/installation-shell-rc.png)
+
+* dir_colors_lightyellow
+  * [File](dir_colors_lightyellow)
+  * https://github.com/ivoarch/dircolors-zenburn
+![](https://github.com/ivoarch/dircolors-zenburn/raw/master/img/screenshot.png)
