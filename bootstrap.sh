@@ -1,6 +1,6 @@
 # To install nvim https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
 sudo -s
-apt install curl tmux htop python3 neovim python-neovim python3-neovim
+apt install curl tmux htop neofetch python3 neovim python-neovim python3-neovim
 # ohmyzsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
