@@ -16,10 +16,6 @@ $repo= Join-Path $env:USERPROFILE -ChildPath \source\repos
 $dl= Join-Path $env:USERPROFILE -ChildPath \Downloads
 $docs= Join-Path $env:USERPROFILE -ChildPath \Documents
 
-# UTILS
-function clean-bin{Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
-Set-Alias bget Start-BitsTransfer
-
 # SUDO
 Set-Alias su run-as-admin
 function run-as-admin{Start-Process powershell -Verb runas}
@@ -79,6 +75,10 @@ function beeep(){[console]::beep(2000,500)}
 Set-Alias l ls
 Set-Alias e explorer
 Set-Alias w3m elinks
+function wslstop{wsl --shutdown}
+function wslls{wsl -l -v}
+function clean-bin{Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
+Set-Alias bget Start-BitsTransfer
 
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
