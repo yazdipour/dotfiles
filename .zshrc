@@ -32,6 +32,7 @@ alias cat='bat'
 alias ex='exit'
 alias bye='poweroff'
 alias cls='clear'
+alias about='neofetch'
 
 # NETWORK
 alias p='ping 1.1.1.1'
