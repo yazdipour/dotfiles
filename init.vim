@@ -39,6 +39,7 @@ set expandtab
 set nobackup
 set noswapfile
 set nowrap
+set mouse=a
 
 " Theme
 syntax enable
