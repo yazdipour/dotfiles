@@ -15,6 +15,8 @@ Set-Theme Agnoster
 $repo= Join-Path $env:USERPROFILE -ChildPath \source\repos
 $dl= Join-Path $env:USERPROFILE -ChildPath \Downloads
 $docs= Join-Path $env:USERPROFILE -ChildPath \Documents
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) { Import-Module "$ChocolateyProfile" }
 
 # SUDO
 Set-Alias su run-as-admin
@@ -47,7 +49,6 @@ function p192 {ping 192.168.1.1 -t}
 function updatep {. $profile}
 function editp {notepad $profile}
 
-
 # GIT
 Set-Alias g git
 function gitm($_){git commit -m $_}
@@ -60,28 +61,18 @@ function gitrm($_){git rm --cached $_}
 function gits(){git status}
 function update-fork($_){git remote add upstream $_ ; git fetch upstream ; git pull upstream master}
 
-# Search in files
-function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt}
-
-# VSCODE
+# ALIAS
 Set-Alias c code
 function cr($_){code $_ -r}
-
-# BEEP
-function beep(){[console]::beep(500,300)}
-function beeep(){[console]::beep(2000,500)}
-
-# ALIAS
 Set-Alias l ls
 Set-Alias e explorer
 Set-Alias w3m elinks
 function wslstop{wsl --shutdown}
 function wslls{wsl -l -v}
+function beep(){[console]::beep(500,300)}
+function beeep(){[console]::beep(2000,500)}
 function clean-bin{Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
 Set-Alias bget Start-BitsTransfer
-
-# Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
-}
+Set-Alias bget Start-BitsTransfer
+function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt} # Search in files
+function weather($_){(curl "http://wttr.in/${_}").Content}
