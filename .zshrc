@@ -78,5 +78,5 @@ export PATH="$PATH:$HOME/.local/bin"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # NOTES
-#scp /path/to/file username@a:/path/to/destination
+function scphelp() {echo '/path/to/file username@a:/path/to/destination'}
 
