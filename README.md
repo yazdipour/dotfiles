@@ -18,7 +18,7 @@ notepad $profile
 [▶ My init.vim](init.vim)
 
 ## Zsh
-[▶ My .zshrc](profile-zsh.sh)
+[▶ My .zshrc](.zshrc)
 
 ## dir_colors
 
