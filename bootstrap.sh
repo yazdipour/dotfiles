@@ -1,10 +1,11 @@
 #!/bin/bash
 sudo -s
-apt install curl tmux htop zsh neofetch python3 hexcurse bat -y
-# ohmyzsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+apt install curl htop zsh neofetch python3 hexcurse bat -y
+
+# tmux
+sudo apt install tmux
+sudo touch ~/.tmux.conf #copy configs here and then kill server
+tmux kill-server
 
 # ssh
 sudo apt install openssh-server -y
@@ -38,3 +39,8 @@ sudo apt install bashtop
 
 # w3m
 sudo apt-get install w3m w3m-img
+
+# ohmyzsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
