@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# Path to your oh-my-zsh installation.
 export ZSH="/home/shyaz/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX="true"
 eval $( dircolors -b $HOME/.dir_colors )
@@ -24,18 +21,12 @@ source $ZSH/oh-my-zsh.sh
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 ############################
 ############################
-function cd { builtin cd "$@" && ls }
-alias cp='cp --interactive'
-alias mv='mv --interactive'
-alias rm='rm --interactive'
-alias cat='bat'
-alias ex='exit'
-alias bye='poweroff'
-alias cls='clear'
-alias about='neofetch'
+#remove duplication in history
+export HISTCONTROL=ignoreboth
 
-# NETWORK
-alias p='ping 1.1.1.1'
+alias editrepo='sudo vi /etc/apt/sources.list'
+alias editrc='sudo vi ~/.zshrc'
+alias edittmux='sudo vi ~/.tmux.conf'
 
 # GIT
 alias gitc='git clone'
@@ -52,31 +43,38 @@ alias gita='git add '
 alias gitm='git commit -m '
 alias gitconfig='git config --list'
 
-# APPS
+# WSL
+alias xstart='export DISPLAY=:0; xfce4-session;'
+function x() {"export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | head -1 | awk '{print $2}'):0"}
+alias x1='export DISPLAY=:0'
+
+# python
 alias py='python'
+alias pip3='sudo /usr/bin/pip3'
+
+# Stuff
+function scphelp() {echo '/path/to/file username@a:/path/to/destination'}
+function cd { builtin cd "$@" && ls }
+alias la='ls -A'
+alias ll='ls -alF'
+alias cp='cp --interactive'
+alias mv='mv --interactive'
+alias rm='rm --interactive'
+alias cls='clear'
+alias about='neofetch'
+alias version='lsb_release -a'
+alias p1='ping 1.1.1.1'
+alias zu='sudo -s'
+alias installdeb='sudo dpkg -i'
 alias tor='tor --HTTPTunnelPort 8118'
 alias c='code'
 alias cr='code -r'
 alias hx='hexcurse'
-
-# WSL
-alias x='export DISPLAY=:0'
-alias xstart='export DISPLAY=:0; xfce4-session;'
-
-# Stuff
-alias installdeb='dpkg -i'
-alias editrepo='nano /etc/apt/sources.list'
-alias uzip='tar -xzf '
-alias gcc11='gcc -std=c11 '
+alias uzip='tar -xzf'
 alias watch='npm run serve'
-alias zu='sudo -s'
 alias dif='diff -yZB'
-alias x32='sudo service binfmt-support start'
-alias pip3='sudo /usr/bin/pip3'
+
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# NOTES
-function scphelp() {echo '/path/to/file username@a:/path/to/destination'}
 
