@@ -53,7 +53,7 @@ alias py='python'
 alias pip3='sudo /usr/bin/pip3'
 
 # Stuff
-function scphelp() {echo '/path/to/file username@a:/path/to/destination'}
+function scphelp() {echo 'scp /path/to/file username@a:/path/to/destination'}
 function cd { builtin cd "$@" && ls }
 alias la='ls -A'
 alias ll='ls -alF'
