@@ -67,8 +67,8 @@ function cr($_){code $_ -r}
 Set-Alias l ls
 Set-Alias e explorer
 Set-Alias w3m elinks
-function wslstop{wsl --shutdown}
-function wslls{wsl -l -v}
+function wsls{wsl --shutdown}
+function wsll{wsl -l -v}
 function beep(){[console]::beep(500,300)}
 function beeep(){[console]::beep(2000,500)}
 function clean-bin{Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
