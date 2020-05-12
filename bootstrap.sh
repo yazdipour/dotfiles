@@ -30,3 +30,11 @@ sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 sudo update-alternatives --config vim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
+
+# bashtop
+sudo add-apt-repository ppa:bashtop-monitor/bashtop
+sudo apt update
+sudo apt install bashtop
+
+# w3m
+sudo apt-get install w3m w3m-img
