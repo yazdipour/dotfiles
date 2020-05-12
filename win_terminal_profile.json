@@ -1,0 +1,114 @@
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+  "profiles": [
+    {
+      // Make changes here to the powershell.exe profile
+      "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+      "name": "Windows PowerShell",
+      "commandline": "powershell.exe",
+      "fontFace": "Fira Code",
+      "acrylicOpacity": 0.9,
+      "useAcrylic": true,
+      "background": "#111111",
+      "tabTitle": "PowerShell",
+      "hidden": false
+    },
+    {
+      "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+      "hidden": false,
+      "name": "Ubuntu-20.04 WSL2",
+      "fontFace": "Fira Code",
+      "colorScheme": "Symfonicz",
+      "source": "Windows.Terminal.Wsl"
+    },
+    {
+      "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+      "hidden": false,
+      "name": "Ubuntu WSL1",
+      "tabTitle": "WSL",
+      "fontFace": "Fira Code",
+      "colorScheme": "Symfonicz",
+      "useAcrylic": true,
+      "background": "#300A24",
+      "source": "Windows.Terminal.Wsl"
+    },
+    {
+      // Make changes here to the cmd.exe profile
+      "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+      "name": "cmd",
+      "background": "#111111",
+      "commandline": "cmd.exe",
+      "hidden": false
+    },
+    {
+      "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+      "hidden": true,
+      "name": "Azure Cloud Shell",
+      "source": "Windows.Terminal.Azure"
+    },
+    {
+      "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+      "hidden": false,
+      "name": "kali-linux",
+      "acrylicOpacity": 0.9,
+      "fontFace": "Fira Code",
+      "useAcrylic": true,
+      "source": "Windows.Terminal.Wsl"
+    }
+  ],
+  // Add custom color schemes to this array
+  "schemes": [
+    {
+      "background": "#000000",
+      "black": "#000000",
+      "blue": "#0084D4",
+      "brightBlack": "#6e6e6d",
+      "brightBlue": "#0084D4",
+      "brightCyan": "#CCCCFF",
+      "brightGreen": "#56DB3A",
+      "brightPurple": "#B729D9",
+      "brightRed": "#DC322F",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#FF8400",
+      "cyan": "#CCCCFF",
+      "foreground": "#FFFFFF",
+      "green": "#51bb3c",
+      "name": "Symfonicz",
+      "purple": "#B729D9",
+      "red": "#DC322F",
+      "white": "#FFFFFF",
+      "yellow": "#FF8400"
+    }
+  ],
+  // Add any keybinding overrides to this array.
+  // To unbind a default keybinding, set the command to "unbound"
+  "keybindings": [
+    {
+      "command": "closeTab",
+      "keys": ["ctrl+w"]
+    },
+    {
+      "command": "openNewTabDropdown",
+      "keys": ["ctrl+t"]
+    },
+    {
+      "command": "scrollDown",
+      "keys": ["ctrl+shift+down"]
+    },
+    {
+      "command": "scrollDownPage",
+      "keys": ["ctrl+shift+pgdn"]
+    },
+    {
+      "command": "scrollUp",
+      "keys": ["ctrl+shift+up"]
+    },
+    {
+      "command": "scrollUpPage",
+      "keys": ["ctrl+shift+pgup"]
+    }
+  ]
+}
