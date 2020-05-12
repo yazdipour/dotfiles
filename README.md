@@ -14,12 +14,6 @@ notepad $profile
 . $profile
 ```
 
-## NVim
-[▶ My init.vim](init.vim)
-
-## Zsh
-[▶ My .zshrc](.zshrc)
-
 ## dir_colors
 
 To set the dir_colors: `eval $( dircolors -b $HOME/.dir_colors )`
