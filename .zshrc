@@ -1,4 +1,4 @@
-export ZSH="/home/shyaz/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_DISABLE_COMPFIX="true"
 eval $( dircolors -b $HOME/.dir_colors )
 ZSH_THEME="junkfood"
@@ -44,7 +44,6 @@ alias gitm='git commit -m '
 alias gitconfig='git config --list'
 
 # WSL
-alias xstart='export DISPLAY=:0; xfce4-session;'
 function x() {"export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | head -1 | awk '{print $2}'):0"}
 alias x1='export DISPLAY=:0'
 
@@ -61,20 +60,20 @@ alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
 alias cls='clear'
+alias p1='ping 1.1.1.1'
 alias about='neofetch'
 alias version='lsb_release -a'
-alias p1='ping 1.1.1.1'
-alias zu='sudo -s'
 alias installdeb='sudo dpkg -i'
 alias tor='tor --HTTPTunnelPort 8118'
 alias c='code'
 alias cr='code -r'
 alias hx='hexcurse'
 alias uzip='tar -xzf'
-alias watch='npm run serve'
 alias dif='diff -yZB'
 
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
