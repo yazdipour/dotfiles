@@ -5,14 +5,12 @@
   "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
   "profiles": [
     {
-      // Make changes here to the powershell.exe profile
       "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
       "name": "Windows PowerShell",
       "commandline": "powershell.exe",
       "fontFace": "Fira Code",
-      "acrylicOpacity": 0.9,
-      "useAcrylic": true,
-      "background": "#111111",
+      "acrylicOpacity": 1,
+      "background": "#000000",
       "tabTitle": "PowerShell",
       "hidden": false
     },
@@ -109,6 +107,10 @@
     {
       "command": "scrollUpPage",
       "keys": ["ctrl+shift+pgup"]
+    },
+    {
+      "command": "splitPane",
+      "keys": ["alt+shift+d"]
     }
   ]
 }
