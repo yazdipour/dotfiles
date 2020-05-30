@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo -s
-apt install curl htop zsh neofetch python3 hexcurse figlet bat -y
+apt install curl htop zsh neofetch python3 hexcurse figlet bat aria2 -y
 
 # tmux
 sudo apt install tmux
