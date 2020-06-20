@@ -28,6 +28,8 @@ alias editrepo='sudo vi /etc/apt/sources.list'
 alias editrc='sudo vi ~/.zshrc'
 alias edittmux='sudo vi ~/.tmux.conf'
 
+# Suffix
+alias -s {md,txt,js,css,html,htm,c,cpp}=vi
 # GIT
 alias gitc='git clone'
 alias gits='git status'
