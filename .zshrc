@@ -44,6 +44,8 @@ alias gitd='git diff HEAD~'
 alias gita='git add '
 alias gitm='git commit -m '
 alias gitconfig='git config --list'
+alias countfile='ls -l . | egrep -c '\''^-'\'''
+alias sizedir='du -shc ./*'
 
 # WSL
 function x() {"export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | head -1 | awk '{print $2}'):0"}
