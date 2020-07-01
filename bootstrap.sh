@@ -1,6 +1,6 @@
 #!/bin/bash
 sudo -s
-apt install curl htop zsh neofetch python3 dos2unix hexcurse figlet bat aria2 golang-go -y
+apt install curl htop zsh neofetch python3 dos2unix hexcurse figlet bat aria2 tldr golang-go -y
 
 # tmux
 sudo apt install tmux
