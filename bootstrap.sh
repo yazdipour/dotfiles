@@ -2,6 +2,9 @@
 sudo -s
 apt install curl htop zsh neofetch python3 dos2unix hexcurse figlet bat aria2 tldr golang-go -y
 
+# Java
+sudo apt install default-jdk
+
 # tmux
 sudo apt install tmux
 wget https://raw.githubusercontent.com/yazdipour/dot-files/master/.tmux.config -O ~/.tmux.conf #copy configs here and then kill server
