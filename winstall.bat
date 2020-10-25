@@ -5,3 +5,4 @@ winget install --id=Postman.Postman && winget install --id=Telegram.TelegramDesk
 winget install --id=Microsoft.WindowsTerminal && winget install --id=WiresharkFoundation.Wireshark && winget install --id=TranslucentTB.TranslucentTB
 winget install TechPowerUp.GPU-Z  && winget install CPUID.HWMonitor  && winget install CPUID.CPU-Z 
 winget install Discord.Discord  && winget install SlackTechnologies.Slack  && winget install Microsoft.Teams 
+winget install Microsoft.AzureCLI
