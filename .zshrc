@@ -74,6 +74,7 @@ alias cr='code -r'
 alias hx='hexcurse'
 alias uzip='tar -xzf'
 alias dif='diff -yZB'
+alias dl='aria2c'
 
 # PATH
 export PATH="$PATH:$HOME/.local/bin"
