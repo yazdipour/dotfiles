@@ -76,3 +76,5 @@ Set-Alias bget Start-BitsTransfer
 Set-Alias bget Start-BitsTransfer
 function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt} # Search in files
 function weather($_){(curl "http://wttr.in/${_}").Content}
+function mp4tomp3(){ffmpeg -i}
+function compressmp4($_){ffmpeg -i $_ -vcodec h264 -acodec mp2 output.mp4}
