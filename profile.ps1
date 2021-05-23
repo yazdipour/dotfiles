@@ -9,14 +9,13 @@
 # THEME
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme Agnoster
+Import-Module -Name Terminal-Icons
+Set-Theme Paradox
 
 # ENV
-$repo= Join-Path $env:USERPROFILE -ChildPath \source\repos
+$repo= Join-Path $env:USERPROFILE -ChildPath \Source
 $dl= Join-Path $env:USERPROFILE -ChildPath \Downloads
 $docs= Join-Path $env:USERPROFILE -ChildPath \Documents
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) { Import-Module "$ChocolateyProfile" }
 
 # SUDO
 Set-Alias su run-as-admin
@@ -61,20 +60,27 @@ function gitrm($_){git rm --cached $_}
 function gits(){git status}
 function update-fork($_){git remote add upstream $_ ; git fetch upstream ; git pull upstream master}
 
-# ALIAS
+# VSCODE
 Set-Alias c code
 function cr($_){code $_ -r}
+
+# BEEP
+function beep(){[console]::beep(500,300)}
+function beeep(){[console]::beep(2000,500)}
+
+# WINDOWS
 Set-Alias l ls
 Set-Alias e explorer
 Set-Alias w3m elinks
 function wsls{wsl --shutdown}
 function wsll{wsl -l -v}
-function beep(){[console]::beep(500,300)}
-function beeep(){[console]::beep(2000,500)}
-function clean-bin{Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
-Set-Alias bget Start-BitsTransfer
-Set-Alias bget Start-BitsTransfer
 function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt} # Search in files
+function openbin{start shell:RecycleBinFolder}
+function rmbin{Clear-RecycleBin}
+function clean-bin{Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
+
+## UTILS
+Set-Alias bget Start-BitsTransfer
 function weather($_){(curl "http://wttr.in/${_}").Content}
 function mp4tomp3(){ffmpeg -i}
 function compressmp4($_){ffmpeg -i $_ -vcodec h264 -acodec mp2 output.mp4}
