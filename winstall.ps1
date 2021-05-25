@@ -7,3 +7,7 @@ winget install TechPowerUp.GPU-Z  ; winget install CPUID.HWMonitor  ; winget ins
 winget install Discord.Discord  ; winget install SlackTechnologies.Slack  ; winget install Microsoft.Teams 
 winget install Microsoft.AzureCLI  ; winget install dbeaver.dbeaver  ; winget install DBBrowserForSQLite.DBBrowserForSQLite
 winget install SweetScape.010Editor  ; winget install LutzRoeder.Netron 
+
+Install-Module oh-my-posh -Scope CurrentUser
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
+Install-Module -Name Terminal-Icons -Repository PSGallery
