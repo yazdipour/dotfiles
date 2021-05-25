@@ -10,7 +10,7 @@
 Import-Module posh-git
 Import-Module oh-my-posh
 Import-Module -Name Terminal-Icons
-Set-Theme Paradox
+Set-PoshPrompt Paradox
 
 # ENV
 $repo= Join-Path $env:USERPROFILE -ChildPath \Source
