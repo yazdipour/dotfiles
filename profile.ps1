@@ -77,7 +77,7 @@ function wsll{wsl -l -v}
 function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt} # Search in files
 function openbin{start shell:RecycleBinFolder}
 function rmbin{Clear-RecycleBin}
-function clean-bin{Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
+function rmbuildfolders{Get-ChildItem .\ -include bin,obj,target -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
 
 ## UTILS
 Set-Alias bget Start-BitsTransfer
