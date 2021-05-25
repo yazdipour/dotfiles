@@ -50,6 +50,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 cp ~/.zshrc  ~/.zshrc_bk
 wget https://raw.githubusercontent.com/yazdipour/dot-files/master/.zshrc -O ~/.zshrc
-wget https://raw.githubusercontent.com/yazdipour/dot-files/master/dir_colors_lightblue -O $HOME/.dir_colors
+wget https://raw.githubusercontent.com/yazdipour/dot-files/master/dir_colors_lightyellow -O $HOME/.dir_colors
 dos2unix ~/.zshrc
 dos2unix $HOME/.dir_colors
