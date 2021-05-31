@@ -14,3 +14,5 @@ Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 Install-Module -Name Terminal-Icons -Repository PSGallery
 Install-Module Watch -Scope CurrentUser
+
+choco install -y nano
