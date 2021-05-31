@@ -7,7 +7,7 @@ winget install TechPowerUp.GPU-Z  ; winget install CPUID.HWMonitor  ; winget ins
 winget install Discord.Discord  ; winget install SlackTechnologies.Slack  ; winget install Microsoft.Teams 
 winget install Microsoft.AzureCLI  ; winget install dbeaver.dbeaver  ; winget install DBBrowserForSQLite.DBBrowserForSQLite
 winget install SweetScape.010Editor  ; winget install LutzRoeder.Netron 
-winget install "Auto Dark Mode"; winget install quicklook
+winget install "Auto Dark Mode"; winget install quicklook; winget install clsid2.mpc-hc
 winget install lens; winget install mqttx
 
 Install-Module oh-my-posh -Scope CurrentUser
