@@ -78,6 +78,7 @@ function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string
 function openbin{start shell:RecycleBinFolder}
 Set-Alias rmbin Clear-RecycleBin
 function rmbuildfolders{Get-ChildItem .\ -include bin,obj,target -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
+function smi{Watch-Command -Cont -ClearScreen {nvidia-smi.exe}} #while (1){cls;nvidia-smi;sleep 1}
 
 ## UTILS
 Set-Alias bget Start-BitsTransfer
