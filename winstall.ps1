@@ -16,3 +16,4 @@ Install-Module -Name Terminal-Icons -Repository PSGallery
 Install-Module Watch -Scope CurrentUser
 
 choco install -y nano
+iwr -useb get.scoop.sh | iex
