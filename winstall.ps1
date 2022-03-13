@@ -38,7 +38,9 @@ winget install -e --id GoLang.Go
 winget install -e --id OpenJS.NodeJS.LTS
 winget install -e --id Ookla.Speedtest
 winget install -e --id SomePythonThings.WingetUIStore
-
+winget install -e --id ShareX.ShareX
+winget install -e --id FedericoTerzi.espanso
+winget install -e --id voidtools.Everything
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
