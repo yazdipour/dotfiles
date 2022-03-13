@@ -69,6 +69,7 @@ function beep(){[console]::beep(500,300)}
 function beeep(){[console]::beep(2000,500)}
 
 # WINDOWS
+Set-Alias grep findstr
 Set-Alias l ls
 Set-Alias e explorer
 Set-Alias w3m elinks
