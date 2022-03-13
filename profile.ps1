@@ -86,3 +86,5 @@ Set-Alias bget Start-BitsTransfer
 function weather($_){(curl "http://wttr.in/${_}").Content}
 function mp4tomp3(){ffmpeg -i}
 function compressmp4($_){ffmpeg -i $_ -vcodec h264 -acodec mp2 output.mp4}
+function cht($_){(curl "https://cht.sh/${_}?Q&style=bw").Content}
+function chtv($_){(curl "https://cht.sh/${_}?q&style=bw").Content}
