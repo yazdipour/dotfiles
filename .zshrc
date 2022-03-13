@@ -25,7 +25,7 @@ source $ZSH/oh-my-zsh.sh
 export HISTCONTROL=ignoreboth
 
 alias editrepo='sudo vi /etc/apt/sources.list'
-alias editrc='sudo vi ~/.zshrc'
+alias editp='sudo vi ~/.zshrc'
 alias edittmux='sudo vi ~/.tmux.conf'
 
 # Suffix
@@ -46,10 +46,6 @@ alias gitm='git commit -m '
 alias gitconfig='git config --list'
 alias countfile='ls -l . | egrep -c '\''^-'\'''
 alias sizedir='du -shc ./*'
-
-# WSL
-function x() {"export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | head -1 | awk '{print $2}'):0"}
-alias x1='export DISPLAY=:0'
 
 # python
 alias py='python'
