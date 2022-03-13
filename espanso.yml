@@ -7,6 +7,8 @@
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 undo_backspace: false
+enable_passive: true
+passive_key: CTRL
 matches:
   # Personal
   - trigger: "\\esp"
@@ -15,7 +17,7 @@ matches:
   - trigger: "\\me"
     replace: "Shahriar Yazdipour"
 
-  - trigger: "\\reg"
+  - trigger: "\\rg"
     replace: "Regards,\nShahriar"
 
   - trigger: "\\site"
