@@ -50,6 +50,12 @@ matches:
   - trigger: "\\U:"
     replace: "Ü"
 
+  # currency
+  - trigger: "\\euro"
+    replace: "€"
+  - trigger: "\\pound"
+    replace: "£"
+
   # Dates
   - trigger: "\\date"
     replace: "{{mydate}}"
