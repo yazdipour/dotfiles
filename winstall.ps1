@@ -1,36 +1,36 @@
-winget install --id=Microsoft.VisualStudioCode 
-winget install --id=OBSProject.OBSStudio 
-winget install --id=OpenJS.Nodejs
-winget install --id=7zip.7zip 
-winget install --id=Git.Git
-winget install --id=GitHub.cli 
+winget install -e --id Microsoft.VisualStudioCode 
+winget install -e --id OBSProject.OBSStudio 
+winget install -e --id OpenJS.Nodejs
+winget install -e --id 7zip.7zip 
+winget install -e --id Git.Git
+winget install -e --id GitHub.cli 
 winget install -e --id Axosoft.GitKraken
-winget install --id=Telerik.Fiddler 
-winget install --id=Graphviz.Graphviz 
-winget install --id=SourceFoundry.HackFonts 
-winget install --id=Insecure.Nmap 
-winget install --id=Microsoft.PowerToys 
-winget install --id=Postman.Postman 
-winget install --id=Telegram.TelegramDesktop 
-winget install --id=Microsoft.VisualStudio.Community 
-winget install --id=Microsoft.WindowsTerminal 
-winget install --id=WiresharkFoundation.Wireshark 
-winget install TechPowerUp.GPU-Z  
-winget install CPUID.HWMonitor  
-winget install CPUID.CPU-Z 
-winget install Discord.Discord  
-winget install SlackTechnologies.Slack  
-winget install Microsoft.Teams 
-winget install Microsoft.AzureCLI  
-winget install dbeaver.dbeaver  
-winget install DBBrowserForSQLite.DBBrowserForSQLite
-winget install SweetScape.010Editor  
-winget install LutzRoeder.Netron 
-winget install "Auto Dark Mode"
-winget install quicklook
-winget install clsid2.mpc-hc
-winget install lens
-winget install mqttx
+winget install -e --id Telerik.Fiddler 
+winget install -e --id Graphviz.Graphviz 
+winget install -e --id SourceFoundry.HackFonts 
+winget install -e --id Insecure.Nmap 
+winget install -e --id Microsoft.PowerToys 
+winget install -e --id Postman.Postman 
+winget install -e --id Telegram.TelegramDesktop 
+winget install -e --id Microsoft.VisualStudio.Community 
+winget install -e --id Microsoft.WindowsTerminal 
+winget install -e --id WiresharkFoundation.Wireshark 
+winget install -e --id TechPowerUp.GPU-Z  
+winget install -e --id CPUID.HWMonitor  
+winget install -e --id CPUID.CPU-Z 
+winget install -e --id Discord.Discord  
+winget install -e --id SlackTechnologies.Slack  
+winget install -e --id Microsoft.Teams 
+winget install -e --id Microsoft.AzureCLI  
+winget install -e --id dbeaver.dbeaver  
+winget install -e --id DBBrowserForSQLite.DBBrowserForSQLite
+winget install -e --id SweetScape.010Editor  
+winget install -e --id LutzRoeder.Netron 
+winget install -e --id Armin2208.WindowsAutoNightMode
+winget install -e --id QL-Win.QuickLook
+winget install -e --id clsid2.mpc-hc
+winget install -e --id Mirantis.Lens
+winget install -e --id emqx.mqttx
 winget install -e --id Cisco.WebexTeams
 winget install -e --id Docker.DockerDesktop
 winget install -e --id Yarn.Yarn
@@ -41,6 +41,7 @@ winget install -e --id SomePythonThings.WingetUIStore
 winget install -e --id ShareX.ShareX
 winget install -e --id FedericoTerzi.espanso
 winget install -e --id voidtools.Everything
+winget install --id Balena.Etcher
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
