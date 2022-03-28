@@ -7,7 +7,7 @@ HIST_STAMPS="dd/mm/yyyy"
 
 plugins=(
   git
-  osx
+  macos
   extract
   zsh-autosuggestions
   zsh-syntax-highlighting
