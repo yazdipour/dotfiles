@@ -48,9 +48,15 @@ PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 Install-Module -Name Terminal-Icons -Repository PSGallery
 Install-Module Watch -Scope CurrentUser
 
-choco install paint.net -y
-choco install terraform -y
-choco install kubernetes-helm -y
-choco install kubernetes-cli -y
-choco install -y nano
 iwr -useb get.scoop.sh | iex
+scoop bucket add extras
+scoop install k9s
+scoop install paint.net
+scoop install terraform
+scoop install nano
+
+scoop bucket add nerd-fonts
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+choco install kubernetes-helm -y
