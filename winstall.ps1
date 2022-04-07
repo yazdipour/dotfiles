@@ -45,7 +45,6 @@ winget install --id Balena.Etcher
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
-Install-Module -Name Terminal-Icons -Repository PSGallery
 Install-Module Watch -Scope CurrentUser
 
 iwr -useb get.scoop.sh | iex
@@ -57,6 +56,7 @@ scoop install nano
 scoop install espanso
 scoop bucket add nerd-fonts
 scoop install firacode
+scoop install terminal-icons
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
