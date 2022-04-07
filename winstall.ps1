@@ -41,7 +41,8 @@ winget install -e --id SomePythonThings.WingetUIStore
 winget install -e --id ShareX.ShareX
 winget install -e --id FedericoTerzi.espanso
 winget install -e --id voidtools.Everything
-winget install --id Balena.Etcher
+winget install -e --id Balena.Etcher
+winget install --name 'WhatsApp Desktop'
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
