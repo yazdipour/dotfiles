@@ -1,3 +1,4 @@
+# https://winstall.app/
 winget install -e --id Microsoft.VisualStudioCode 
 winget install -e --id OBSProject.OBSStudio 
 winget install -e --id OpenJS.Nodejs
@@ -37,12 +38,14 @@ winget install -e --id Yarn.Yarn
 winget install -e --id GoLang.Go
 winget install -e --id OpenJS.NodeJS.LTS
 winget install -e --id Ookla.Speedtest
-winget install -e --id SomePythonThings.WingetUIStore
 winget install -e --id ShareX.ShareX
 winget install -e --id FedericoTerzi.espanso
 winget install -e --id voidtools.Everything
 winget install -e --id Balena.Etcher
 winget install --name 'WhatsApp Desktop'
+winget install -e --id=Nvidia.GeForceExperience
+winget install --id=Zoom.Zoom  -e
+winget install --id=Python.Python.3  -e
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
