@@ -1,12 +1,12 @@
 #!/bin/bash
-sudo -s
-apt install curl htop zsh neofetch python3 dos2unix hexcurse figlet bat aria2 tldr golang-go -y
+sudo apt install curl htop zsh python3 golang-go -y
+sudo apt install neofetch dos2unix hexcurse figlet bat aria2 tldr -y
 
 # Java
-sudo apt install default-jdk
+sudo apt install default-jdk -y
 
 # tmux
-sudo apt install tmux
+sudo apt install tmux -y
 wget https://raw.githubusercontent.com/yazdipour/dot-files/master/.tmux.config -O ~/.tmux.conf #copy configs here and then kill server
 tmux kill-server
 
@@ -18,7 +18,7 @@ sudo ufw enable
 
 # nvim
 # To install nvim https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
-sudo apt-get install software-properties-common
+sudo apt-get install software-properties-common -y
 sudo apt update
 sudo apt install neovim python3-neovim python3-dev python3-pip -y
 # vimplug
