@@ -48,6 +48,7 @@ winget install --id=Zoom.Zoom  -e
 winget install --id=Python.Python.3  -e
 winget install --id=JetBrains.IntelliJIDEA.Community  -e
 winget install --id=Valve.Steam  -e
+winget install -e --id Meltytech.Shotcut
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
