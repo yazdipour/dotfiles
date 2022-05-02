@@ -42,6 +42,7 @@ winget install -e --id ShareX.ShareX
 winget install -e --id FedericoTerzi.espanso
 winget install -e --id voidtools.Everything
 winget install -e --id Balena.Etcher
+winget install -e --id=sidneys.desktop-dimmer
 winget install --name 'WhatsApp Desktop'
 winget install -e --id=Nvidia.GeForceExperience
 winget install --id=Zoom.Zoom  -e
