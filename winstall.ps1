@@ -50,6 +50,8 @@ winget install --id=Python.Python.3  -e
 winget install --id=JetBrains.IntelliJIDEA.Community  -e
 winget install --id=Valve.Steam  -e
 winget install -e --id Meltytech.Shotcut
+winget install -e --id Datronicsoft.SpacedeskDriver.Server
+
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
