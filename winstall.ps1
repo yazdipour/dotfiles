@@ -51,7 +51,7 @@ winget install --id=JetBrains.IntelliJIDEA.Community  -e
 winget install --id=Valve.Steam  -e
 winget install -e --id Meltytech.Shotcut
 winget install -e --id Datronicsoft.SpacedeskDriver.Server
-
+winget install icsharpcode.ILSpy
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
@@ -67,6 +67,7 @@ scoop install espanso
 scoop bucket add nerd-fonts
 scoop install firacode
 scoop install terminal-icons
+scoop install dotPeek
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
