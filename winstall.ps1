@@ -65,11 +65,10 @@ scoop install terraform
 scoop install nano
 scoop install espanso
 scoop bucket add nerd-fonts
-scoop install firacode
 scoop install terminal-icons
 scoop install dotPeek
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-
+choco install firacode
 choco install kubernetes-helm -y
 choco install winmtr-redux
