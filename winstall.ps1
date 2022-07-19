@@ -53,7 +53,7 @@ winget install -e --id Meltytech.Shotcut
 winget install -e --id Datronicsoft.SpacedeskDriver.Server
 winget install icsharpcode.ILSpy
 winget install twinkletray
-
+winget install RoundedTB
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
