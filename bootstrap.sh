@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt install curl htop zsh python3 golang-go -y
+sudo apt install curl htop zsh python3 golang-go unzip -y
 sudo apt install neofetch dos2unix hexcurse figlet bat aria2 tldr -y
 
 # Java
