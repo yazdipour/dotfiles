@@ -58,6 +58,7 @@ function gitd($_){git diff $_}
 function git-noupdate($_){git update-index --assume-unchanged $_}
 function gitrm($_){git rm --cached $_}
 function gits(){git status}
+function gitl(){git log --graph --oneline --decorate}
 function update-fork($_){git remote add upstream $_ ; git fetch upstream ; git pull upstream master}
 
 # VSCODE
