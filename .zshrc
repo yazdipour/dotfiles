@@ -44,14 +44,15 @@ alias gitd='git diff HEAD~'
 alias gita='git add '
 alias gitm='git commit -m '
 alias gitconfig='git config --list'
-alias countfile='ls -l . | egrep -c '\''^-'\'''
-alias sizedir='du -shc ./*'
+alias gitl='git log --graph --oneline --decorate'
 
 # python
 alias py='python'
 alias pip3='sudo /usr/bin/pip3'
 
 # Stuff
+alias countfile='ls -l . | egrep -c '\''^-'\'''
+alias sizedir='du -shc ./*'
 function scphelp() {echo 'scp /path/to/file username@a:/path/to/destination'}
 function cd { builtin cd "$@" && ls }
 alias la='ls -A'
@@ -77,4 +78,3 @@ export PATH="$PATH:$HOME/.local/bin"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-
