@@ -2,11 +2,9 @@
 winget install -e --id Microsoft.VisualStudioCode 
 winget install -e --id OBSProject.OBSStudio 
 winget install -e --id OpenJS.Nodejs
-winget install -e --id 7zip.7zip 
 winget install -e --id Git.Git
 winget install -e --id GitHub.cli 
 winget install -e --id Axosoft.GitKraken
-winget install -e --id Telerik.Fiddler 
 winget install -e --id Graphviz.Graphviz 
 winget install -e --id SourceFoundry.HackFonts 
 winget install -e --id Insecure.Nmap 
@@ -35,7 +33,7 @@ winget install -e --id emqx.mqttx
 winget install -e --id Cisco.WebexTeams
 winget install -e --id Docker.DockerDesktop
 winget install -e --id Yarn.Yarn
-winget install -e --id GoLang.Go
+winget install -e --id GoLang.Go.1.19
 winget install -e --id OpenJS.NodeJS.LTS
 winget install -e --id Ookla.Speedtest
 winget install -e --id ShareX.ShareX
@@ -46,7 +44,7 @@ winget install -e --id=sidneys.desktop-dimmer
 winget install --name 'WhatsApp Desktop'
 winget install -e --id=Nvidia.GeForceExperience
 winget install --id=Zoom.Zoom  -e
-winget install --id=Python.Python.3  -e
+winget install --id=Python.Python.3.10  -e
 winget install --id=JetBrains.IntelliJIDEA.Community  -e
 winget install --id=Valve.Steam  -e
 winget install -e --id Meltytech.Shotcut
@@ -54,6 +52,7 @@ winget install -e --id Datronicsoft.SpacedeskDriver.Server
 winget install icsharpcode.ILSpy
 winget install twinkletray
 winget install RoundedTB
+winget install Daum.PotPlayer
 
 Install-Module oh-my-posh -Scope CurrentUser
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
