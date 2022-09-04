@@ -1,9 +1,14 @@
 #!/bin/bash
-sudo apt install curl htop zsh python3 golang-go unzip -y
+sudo apt install curl htop zsh python3 w3m unzip -y
 sudo apt install neofetch dos2unix hexcurse figlet bat aria2 tldr -y
-
-# Java
 sudo apt install default-jdk -y
+sudo apt install golang-go -y
+sudo apt install cargo -y
+cargo install procs
+
+# Node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+nvm install node
 
 # tmux
 sudo apt install tmux -y
@@ -16,7 +21,7 @@ sudo service ssh status
 sudo ufw allow ssh
 sudo ufw enable
 
-# nvim
+# VIM
 # To install nvim https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
 sudo apt-get install software-properties-common -y
 sudo apt update
@@ -35,14 +40,6 @@ sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
 sudo update-alternatives --config vim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
-
-# bashtop
-sudo add-apt-repository ppa:bashtop-monitor/bashtop
-sudo apt update
-sudo apt install bashtop -y
-
-# w3m
-sudo apt-get install w3m w3m-img -y
 
 # ohmyzsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
