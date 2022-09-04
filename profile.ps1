@@ -3,23 +3,13 @@
 #New-Item $profile -Type File -Force
 #notepad $profile
 
-# INIT
-#Start-Transcript 
-
-# THEME
-Import-Module posh-git
-Import-Module oh-my-posh
-Import-Module -Name Terminal-Icons
-Set-PoshPrompt Paradox
-
 # ENV
 $repo= Join-Path $env:USERPROFILE -ChildPath \Source
 $dl= Join-Path $env:USERPROFILE -ChildPath \Downloads
 $docs= Join-Path $env:USERPROFILE -ChildPath \Documents
 
 # SUDO
-Set-Alias su run-as-admin
-function run-as-admin{Start-Process powershell -Verb runas}
+function su{Start-Process powershell -Verb runas}
 function AsAdminOrNot {
 	$wid = [System.Security.Principal.WindowsIdentity]::GetCurrent()
 	$prp = New-Object System.Security.Principal.WindowsPrincipal($wid)
@@ -88,4 +78,5 @@ function weather($_){(curl "http://wttr.in/${_}").Content}
 function mp4tomp3(){ffmpeg -i}
 function compressmp4($_){ffmpeg -i $_ -vcodec h264 -acodec mp2 output.mp4}
 function cht($_){(curl "https://cht.sh/${_}?Q&style=bw").Content}
-function chtv($_){(curl "https://cht.sh/${_}?q&style=bw").Content}
+
+Invoke-Expression (&starship init powershell)
