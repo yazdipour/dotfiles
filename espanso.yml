@@ -80,8 +80,7 @@ matches:
 
   # markdown-shortcuts
 
-  - triggers: "\\mdimg"
+  - trigger: "\\mdimg"
     replace: "![Alt]()"
-
-  - triggers: "\\mdurl"
+  - trigger: "\\mdurl"
     replace: "[Alt]()"
