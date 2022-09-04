@@ -6,7 +6,6 @@
 Set-Alias l ls
 Set-Alias e explorer
 Set-Alias v nvim
-Set-Alias cat bat -Option AllScope
 Set-Alias grep rg
 Set-Alias find fd
 Set-Alias bget Start-BitsTransfer
