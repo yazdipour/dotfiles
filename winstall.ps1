@@ -46,6 +46,9 @@ scoop bucket add nerd-fonts
 scoop install terminal-icons
 scoop install winfetch
 choco install firacode
+scoop install bat
+scoop install procs
+winget install -e --id SourceFoundry.HackFonts 
 
 # DEV
 Install-Module Watch -Scope CurrentUser
@@ -59,7 +62,6 @@ winget install -e --id Git.Git
 winget install -e --id GitHub.cli 
 winget install -e --id Axosoft.GitKraken
 winget install -e --id Graphviz.Graphviz 
-winget install -e --id SourceFoundry.HackFonts 
 winget install -e --id Microsoft.PowerToys 
 winget install -e --id Postman.Postman 
 winget install -e --id Microsoft.VisualStudio.Community 
