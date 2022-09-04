@@ -1,35 +1,48 @@
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_DISABLE_COMPFIX="true"
-eval $( dircolors -b $HOME/.dir_colors )
-ZSH_THEME="junkfood"
-export UPDATE_ZSH_DAYS=30
-HIST_STAMPS="dd/mm/yyyy"
+source $HOME/antigen.zsh
+antigen init .antigenrc
 
-plugins=(
-  git
-  macos
-  extract
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
-source $ZSH/oh-my-zsh.sh
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-############################
-############################
-#remove duplication in history
-export HISTCONTROL=ignoreboth
+#PATH
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 
+#ALIAS
 alias editrepo='sudo vi /etc/apt/sources.list'
-alias editp='sudo vi ~/.zshrc'
 alias edittmux='sudo vi ~/.tmux.conf'
+alias editant='sudo vi ~/.antigenr'
+alias editp='sudo vi ~/.zshrc; source ~/.zshrc'
 
-# Suffix
+function cd { builtin cd "$@" && ls }
+alias q='exit'
+alias l='exa -laF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias cp='cp --interactive'
+alias mv='mv --interactive'
+alias rm='rm --interactive'
+alias cls='clear'
+alias v='nvim'
+alias cat='bat'
+alias grep='rg'
+alias find='fd'
+alias countfile='ls -l . | egrep -c '\''^-'\'''
+alias sizedir='du -shc ./*'
+alias p1='ping 1.1.1.1'
+alias about='neofetch'
+alias version='lsb_release -a'
+alias uzip='tar -xzf'
+alias dif='diff -yZB'
+alias dl='aria2c'
+alias debi='sudo dpkg -i'
+alias pt='procs --tree'
+alias pw='procs --watch'
+
+# Dev
 alias -s {md,txt,js,css,html,htm,c,cpp}=vi
+alias py='python'
+alias pip3='sudo /usr/bin/pip3'
+alias c='code'
+alias cr='code -r'
+alias hx='hexcurse'
+
 # GIT
 alias gitc='git clone'
 alias gits='git status'
@@ -46,35 +59,4 @@ alias gitm='git commit -m '
 alias gitconfig='git config --list'
 alias gitl='git log --graph --oneline --decorate'
 
-# python
-alias py='python'
-alias pip3='sudo /usr/bin/pip3'
-
-# Stuff
-alias countfile='ls -l . | egrep -c '\''^-'\'''
-alias sizedir='du -shc ./*'
-function scphelp() {echo 'scp /path/to/file username@a:/path/to/destination'}
-function cd { builtin cd "$@" && ls }
-alias la='ls -A'
-alias ll='ls -alF'
-alias cp='cp --interactive'
-alias mv='mv --interactive'
-alias rm='rm --interactive'
-alias cls='clear'
-alias p1='ping 1.1.1.1'
-alias about='neofetch'
-alias version='lsb_release -a'
-alias installdeb='sudo dpkg -i'
-alias tor='tor --HTTPTunnelPort 8118'
-alias c='code'
-alias cr='code -r'
-alias hx='hexcurse'
-alias uzip='tar -xzf'
-alias dif='diff -yZB'
-alias dl='aria2c'
-
-# PATH
-export PATH="$PATH:$HOME/.local/bin"
-export SSH_KEY_PATH="~/.ssh/rsa_id"
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+eval "$(starship init zsh)"

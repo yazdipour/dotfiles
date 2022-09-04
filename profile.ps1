@@ -7,13 +7,15 @@ Set-Alias l ls
 Set-Alias e explorer
 Set-Alias v nvim
 Set-Alias cat bat -Option AllScope
-Set-Alias grep findstr
+Set-Alias grep rg
+Set-Alias find fd
 Set-Alias bget Start-BitsTransfer
 Set-Alias rmbin Clear-RecycleBin
+
+function q{Invoke-command -ScriptBlock {exit}}
 function pt{procs --tree}
 function pw{procs --watch}
 function su{Start-Process powershell -Verb runas}
-function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt} # Search in files
 function openbin{start shell:RecycleBinFolder}
 function rmbuildfolders{Get-ChildItem .\ -include bin,obj,target -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
 function smi{Watch-Command -Cont -ClearScreen {nvidia-smi.exe}} #while (1){cls;nvidia-smi;sleep 1}
@@ -39,8 +41,8 @@ function p1 {ping 1.1.1.1 -t}
 function p192 {ping 192.168.1.1 -t}
 
 # profile
-function updatep {. $profile}
-function editp {v $profile}
+function updatep {. $PROFILE}
+function editp {v $PROFILE}
 
 # GIT
 Set-Alias g git

@@ -1,10 +1,12 @@
 #!/bin/bash
-sudo apt install curl htop zsh python3 w3m unzip -y
+sudo apt install curl htop python3 w3m unzip -y
 sudo apt install neofetch dos2unix hexcurse figlet bat aria2 tldr -y
 sudo apt install default-jdk -y
 sudo apt install golang-go -y
 sudo apt install cargo -y
 cargo install procs
+cargo install ripgrep
+cargo install fd-find
 
 # Node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
@@ -41,12 +43,8 @@ sudo update-alternatives --config vim
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
 sudo update-alternatives --config editor
 
-# ohmyzsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-cp ~/.zshrc  ~/.zshrc_bk
+#zsh
+sudo apt install zsh -y
+curl -L git.io/antigen > $HOME/antigen.zsh
 wget https://raw.githubusercontent.com/yazdipour/dot-files/master/.zshrc -O ~/.zshrc
-wget https://raw.githubusercontent.com/yazdipour/dot-files/master/dir_colors_lightyellow -O $HOME/.dir_colors
 dos2unix ~/.zshrc
-dos2unix $HOME/.dir_colors

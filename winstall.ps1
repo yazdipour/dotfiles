@@ -40,6 +40,7 @@ winget install Daum.PotPlayer
 winget install --id=Valve.Steam  -e
 winget install -e --id Meltytech.Shotcut
 winget install -e --id Datronicsoft.SpacedeskDriver.Server
+winget install -e --id SourceFoundry.HackFonts 
 scoop install paint.net
 scoop install nano
 scoop bucket add nerd-fonts
@@ -48,7 +49,8 @@ scoop install winfetch
 choco install firacode
 scoop install bat
 scoop install procs
-winget install -e --id SourceFoundry.HackFonts 
+scoop install ripgrep
+scoop install fd
 
 # DEV
 Install-Module Watch -Scope CurrentUser
@@ -64,7 +66,7 @@ winget install -e --id Axosoft.GitKraken
 winget install -e --id Graphviz.Graphviz 
 winget install -e --id Microsoft.PowerToys 
 winget install -e --id Postman.Postman 
-winget install -e --id Microsoft.VisualStudio.Community 
+winget install -e --id Microsoft.VisualStudio.2022.Community
 winget install -e --id Microsoft.WindowsTerminal 
 winget install -e --id Microsoft.AzureCLI  
 winget install -e --id dbeaver.dbeaver  
