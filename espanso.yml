@@ -63,7 +63,7 @@ matches:
       - name: mydate
         type: date
         params:
-          format: "%m/%d/%Y"
+          format: "%m-%d-%Y"
 
   # Dev
   - trigger: "\\127"
@@ -80,8 +80,8 @@ matches:
 
   # markdown-shortcuts
 
-  - triggers: [":img:"]
+  - triggers: "\\mdimg"
     replace: "![Alt]()"
 
-  - triggers: [":url:"]
+  - triggers: "\\mdurl"
     replace: "[Alt]()"
