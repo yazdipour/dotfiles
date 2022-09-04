@@ -49,6 +49,9 @@ choco install firacode
 
 # DEV
 Install-Module Watch -Scope CurrentUser
+scoop install sudo
+sudo scoop install openssh --global
+scoop install aria2 grep sed less touch
 winget install -e --id Microsoft.VisualStudioCode 
 winget install -e --id OBSProject.OBSStudio 
 winget install -e --id OpenJS.Nodejs
