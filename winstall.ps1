@@ -48,6 +48,7 @@ scoop install winfetch
 choco install firacode
 
 # DEV
+Install-Module Watch -Scope CurrentUser
 winget install -e --id Microsoft.VisualStudioCode 
 winget install -e --id OBSProject.OBSStudio 
 winget install -e --id OpenJS.Nodejs
@@ -63,7 +64,6 @@ winget install -e --id Microsoft.WindowsTerminal
 winget install -e --id Microsoft.AzureCLI  
 winget install -e --id dbeaver.dbeaver  
 winget install -e --id DBBrowserForSQLite.DBBrowserForSQLite
-winget install -e --id SweetScape.010Editor  
 winget install -e --id LutzRoeder.Netron 
 winget install -e --id Mirantis.Lens
 winget install -e --id emqx.mqttx
@@ -74,7 +74,6 @@ winget install -e --id OpenJS.NodeJS.LTS
 winget install -e --id=Nvidia.GeForceExperience
 winget install --id=Python.Python.3.10  -e
 winget install --id=JetBrains.IntelliJIDEA.Community  -e
-Install-Module Watch -Scope CurrentUser
 scoop install k9s
 scoop install terraform
 choco install kubernetes-helm -y
