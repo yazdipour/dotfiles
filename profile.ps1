@@ -3,19 +3,24 @@
 #New-Item $profile -Type File -Force
 #notepad $profile
 
+Set-Alias cat bat -Option AllScope
+Set-Alias grep findstr
+Set-Alias l ls
+Set-Alias e explorer
+Set-Alias w3m elinks
+function su{Start-Process powershell -Verb runas}
+function wsls{wsl --shutdown}
+function wsll{wsl -l -v}
+function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt} # Search in files
+function openbin{start shell:RecycleBinFolder}
+Set-Alias rmbin Clear-RecycleBin
+function rmbuildfolders{Get-ChildItem .\ -include bin,obj,target -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
+function smi{Watch-Command -Cont -ClearScreen {nvidia-smi.exe}} #while (1){cls;nvidia-smi;sleep 1}
+
 # ENV
 $repo= Join-Path $env:USERPROFILE -ChildPath \Source
 $dl= Join-Path $env:USERPROFILE -ChildPath \Downloads
 $docs= Join-Path $env:USERPROFILE -ChildPath \Documents
-
-# SUDO
-function su{Start-Process powershell -Verb runas}
-function AsAdminOrNot {
-	$wid = [System.Security.Principal.WindowsIdentity]::GetCurrent()
-	$prp = New-Object System.Security.Principal.WindowsPrincipal($wid)
-	$adm = [System.Security.Principal.WindowsBuiltInRole]::Administrator
-	$prp.IsInRole($adm)
-}
 
 # WIFI-SHARE
 function turn-on-hotspot { netsh wla start ho}
@@ -58,19 +63,6 @@ function cr($_){code $_ -r}
 # BEEP
 function beep(){[console]::beep(500,300)}
 function beeep(){[console]::beep(2000,500)}
-
-# WINDOWS
-Set-Alias grep findstr
-Set-Alias l ls
-Set-Alias e explorer
-Set-Alias w3m elinks
-function wsls{wsl --shutdown}
-function wsll{wsl -l -v}
-function find($file, $txt){Get-ChildItem -Recurse -Include $file | select-string $txt} # Search in files
-function openbin{start shell:RecycleBinFolder}
-Set-Alias rmbin Clear-RecycleBin
-function rmbuildfolders{Get-ChildItem .\ -include bin,obj,target -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
-function smi{Watch-Command -Cont -ClearScreen {nvidia-smi.exe}} #while (1){cls;nvidia-smi;sleep 1}
 
 ## UTILS
 Set-Alias bget Start-BitsTransfer
