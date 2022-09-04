@@ -8,6 +8,7 @@ export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 alias editrepo='sudo vi /etc/apt/sources.list'
 alias edittmux='sudo vi ~/.tmux.conf'
 alias editant='sudo vi ~/.antigenr'
+alias editvi='sudo vi ~/.config/nvim/init.vim'
 alias editp='sudo vi ~/.zshrc; source ~/.zshrc'
 
 function cd { builtin cd "$@" && ls }

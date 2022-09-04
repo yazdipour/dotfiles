@@ -26,8 +26,10 @@ sudo ufw enable
 # VIM
 # To install nvim https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
 sudo apt-get install software-properties-common -y
+sudo add-apt-repository ppa:neovim-ppa/stable
 sudo apt update
 sudo apt install neovim python3-neovim python3-dev python3-pip -y
+
 # vimplug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 # to create config file for neovim
