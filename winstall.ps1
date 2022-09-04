@@ -29,6 +29,7 @@ winget install --name 'WhatsApp Desktop'
 winget install --id=Zoom.Zoom  -e
 
 # Windows Stuff
+scoop install starship
 winget install -e --id Armin2208.WindowsAutoNightMode
 winget install -e --id QL-Win.QuickLook
 winget install -e --id FedericoTerzi.espanso
