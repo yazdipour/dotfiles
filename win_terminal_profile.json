@@ -3,10 +3,6 @@
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": [
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
             "command": {
                 "action": "copy",
                 "singleLine": false
@@ -14,16 +10,20 @@
             "keys": "ctrl+c"
         },
         {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
             "command": "find",
             "keys": "ctrl+shift+f"
         },
         {
-            "command": {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "keys": "alt+shift+d"
+            "command": "scrollDown",
+            "keys": "ctrl+j"
+        },
+        {
+            "command": "scrollUp",
+            "keys": "ctrl+k"
         },
         {
             "command": "closeTab",
@@ -36,29 +36,36 @@
         {
             "command": "splitPane",
             "keys": "ctrl+|"
-        },
-        {
-            "command": "scrollDown",
-            "keys": "ctrl+j"
-        },
-        {
-            "command": "scrollUp",
-            "keys": "ctrl+k"
         }
     ],
+    "alwaysShowNotificationIcon": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "profiles": {
-        "defaults": {},
+        "defaults": {
+            "font": {
+                "face": "Hack"
+            }
+        },
         "list": [
             {
                 "font": {
-                    "face": "Fira Code"
+                    "face": "Hack"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
+            },
+            {
+                "colorScheme": "Vintage",
+                "font": {
+                    "face": "Hack"
+                },
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
             },
             {
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -72,10 +79,16 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "guid": "{762bb375-855c-5eca-a10b-24ad41ceea65}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{325cf434-9365-55ca-852f-f50d0f346c9f}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
@@ -310,5 +323,6 @@
             "white": "#C0C0C0",
             "yellow": "#808000"
         }
-    ]
+    ],
+    "showTerminalTitleInTitlebar": true
 }
