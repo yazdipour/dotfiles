@@ -84,3 +84,4 @@ winget install --id=JetBrains.IntelliJIDEA.Community  -e
 scoop install k9s
 scoop install terraform
 choco install kubernetes-helm -y
+Install-Module PSReadLine -AllowPrerelease -Force #auto suggestion 
