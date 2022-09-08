@@ -70,4 +70,8 @@ function mp4tomp3(){ffmpeg -i}
 function compressmp4($_){ffmpeg -i $_ -vcodec h264 -acodec mp2 output.mp4}
 function cht($_){(curl "https://cht.sh/${_}?Q&style=bw").Content}
 
+## Modules
+Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+
 Invoke-Expression (&starship init powershell)
