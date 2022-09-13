@@ -10,7 +10,7 @@ export NVM_DIR="$HOME/.nvm"
 #ALIAS
 alias editrepo='sudo vi /etc/apt/sources.list'
 alias edittmux='vi ~/.tmux.conf'
-alias editant='vi ~/.antigenr'
+alias editant='vi ~/dot-files/zsh/.antigenrc'
 alias editvi='vi ~/.config/nvim/init.vim'
 alias editp='vi ~/.zshrc; source ~/.zshrc'
 
