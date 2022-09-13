@@ -13,6 +13,7 @@ git clone https://github.com/yazdipour/dot-files
 ln -s ~/dot-files/zsh/.zshrc  ~/.zshrc
 ln -s ~/dot-files/tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/dot-files/nvim/init.vim ~/.config/nvim/init.vim
+ln -s ~/dot-files/etc/starship.toml ~/.config/starship.toml
 
 # Node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
