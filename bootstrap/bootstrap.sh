@@ -8,6 +8,12 @@ cargo install procs
 cargo install ripgrep
 cargo install fd-find
 
+# setup dot-files
+git clone https://github.com/yazdipour/dot-files
+ln -s ~/dot-files/zsh/.zshrc  ~/.zshrc
+ln -s ~/dot-files/tmux/.tmux.conf ~/.tmux.conf
+ln -s ~/dot-files/nvim/init.vim ~/.config/nvim/init.vim
+
 # Node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 nvm install node
