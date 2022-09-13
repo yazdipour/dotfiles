@@ -51,6 +51,8 @@ scoop install bat
 scoop install procs
 scoop install ripgrep
 scoop install fd
+scoop install fzf
+scoop install zoxide
 
 # DEV
 Install-Module Watch -Scope CurrentUser
