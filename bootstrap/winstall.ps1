@@ -87,3 +87,6 @@ scoop install k9s
 scoop install terraform
 choco install kubernetes-helm -y
 Install-Module PSReadLine -AllowPrerelease -Force #auto suggestion 
+
+git clone https://github.com/AstroNvim/AstroNvim $HOME\AppData\Local\nvim
+nvim +PackerSync

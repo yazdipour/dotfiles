@@ -16,10 +16,12 @@ alias editp='vi ~/.zshrc; source ~/.zshrc'
 
 function cd { builtin cd "$@" && ls }
 alias q='exit'
+alias t='tmux'
 alias l='exa -laF'
 alias la='ls -A'
 alias ll='ls -alF'
-alias lt='l --tree'
+alias lt='exa --tree'
+alias ltt='exa -alF --tree'
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
@@ -68,16 +70,16 @@ eval "$(starship init zsh)"
 session_name="sesh"
 
 # 1. First you check if a tmux session exists with a given name.
-tmux has-session -t=$session_name 2> /dev/null
+# tmux has-session -t=$session_name 2> /dev/null
 
-# 2. Create the session if it doesn't exists.
-if [[ $? -ne 0 ]]; then
-  TMUX='' tmux new-session -d -s "$session_name"
-fi
+# # 2. Create the session if it doesn't exists.
+# if [[ $? -ne 0 ]]; then
+#   TMUX='' tmux new-session -d -s "$session_name"
+# fi
 
-# 3. Attach if outside of tmux, switch if you're in tmux.
-if [[ -z "$TMUX" ]]; then
-  tmux attach -t "$session_name"
-else
-  tmux switch-client -t "$session_name"
-fi
+# # 3. Attach if outside of tmux, switch if you're in tmux.
+# if [[ -z "$TMUX" ]]; then
+#   tmux attach -t "$session_name"
+# else
+#   tmux switch-client -t "$session_name"
+# fi
