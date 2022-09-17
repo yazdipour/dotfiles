@@ -188,6 +188,15 @@ local config = {
 			-- You can also add new plugins here as well:
 			-- Add plugins, the packer syntax without the "use"
 			{ "github/copilot.vim" },
+			{
+				"phaazon/hop.nvim",
+				branch = "v2", -- optional but strongly recommended
+				config = function()
+					-- you can configure Hop the way you like here; see :h hop-config
+					require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+				end,
+			},
+			{ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" },
 			-- { "andweeb/presence.nvim" },
 			-- {
 			--   "ray-x/lsp_signature.nvim",
