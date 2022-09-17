@@ -1,8 +1,10 @@
+# antigen
+export ANTIGEN="$HOME/dot-files/zsh/.antigenrc"
 source ~/dot-files/zsh/antigen.zsh
 antigen init ~/dot-files/zsh/.antigenrc
 
 #PATH
-export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/aws-tools/"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -10,8 +12,8 @@ export NVM_DIR="$HOME/.nvm"
 #ALIAS
 alias editrepo='sudo vi /etc/apt/sources.list'
 alias edittmux='vi ~/.tmux.conf'
-alias editant='vi ~/dot-files/zsh/.antigenrc'
-alias editvi='vi ~/.config/nvim/init.vim'
+alias editant="vi $ANTIGEN"
+alias editv='vi ~/dot-files/astronvim-config/user/init.lua'
 alias editp='vi ~/.zshrc; source ~/.zshrc'
 
 function cd { builtin cd "$@" && ls }
@@ -64,6 +66,10 @@ alias gita='git add '
 alias gitm='git commit -m '
 alias gitconfig='git config --list'
 alias gitl='git log --graph --oneline --decorate'
+
+# DOCKER
+alias dockstopall='docker stop $(docker ps -q)' #stop all containers
+alias dockrmall='docker rm $(docker ps -q)'
 
 eval "$(starship init zsh)"
 

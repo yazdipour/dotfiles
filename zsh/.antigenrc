@@ -14,7 +14,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 export ZSH_CUSTOM="$HOME"
 source "$ZSH_CUSTOM/plugins/zsh_codex/zsh_codex.plugin.zsh"
-#antigen bundle zsh-users/zsh_codex
+antigen bundle zsh-users/zsh_codex
 
 # Load the theme.
 # antigen theme robbyrussell

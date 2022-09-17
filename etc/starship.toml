@@ -1,4 +1,4 @@
-
+command_timeout = 10000
 
 [battery]
 full_symbol = "🔋"
