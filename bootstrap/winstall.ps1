@@ -90,3 +90,9 @@ Install-Module PSReadLine -AllowPrerelease -Force #auto suggestion
 
 git clone https://github.com/AstroNvim/AstroNvim $HOME\AppData\Local\nvim
 nvim +PackerSync
+
+# Copilot
+
+# Copilot
+npm install -g @githubnext/github-copilot-cli
+github-copilot-cli auth
