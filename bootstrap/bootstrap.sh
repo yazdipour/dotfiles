@@ -54,3 +54,7 @@ sudo apt install zsh -y
 curl -L git.io/antigen > $HOME/antigen.zsh
 wget https://raw.githubusercontent.com/yazdipour/dot-files/master/.zshrc -O ~/.zshrc
 dos2unix ~/.zshrc
+
+# Copilot
+npm install -g @githubnext/github-copilot-cli
+github-copilot-cli auth
