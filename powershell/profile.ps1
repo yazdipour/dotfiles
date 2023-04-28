@@ -20,7 +20,7 @@ function openbin{start shell:RecycleBinFolder}
 function rmbuildfolders{Get-ChildItem .\ -include bin,obj,target -Recurse | ForEach-Object ($_) { remove-item $_.fullname -Force -Recurse }}
 function smi{Watch-Command -Cont -ClearScreen {nvidia-smi.exe}} #while (1){cls;nvidia-smi;sleep 1}
 function wifi{netsh wlan show networks mode=Bssid}
-
+function wport{netstat -a -n -o}
 # ENV
 $repo= Join-Path $env:USERPROFILE -ChildPath \Source
 $dl= Join-Path $env:USERPROFILE -ChildPath \Downloads
