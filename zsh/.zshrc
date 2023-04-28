@@ -42,7 +42,7 @@ alias dl='aria2c'
 alias debi='sudo dpkg -i'
 alias pt='procs --tree'
 alias pw='procs --watch'
-
+alias wport='netstat -ltnp'
 # Dev
 alias -s {md,txt,js,css,html,htm,c,cpp}=vi
 alias py='python'
