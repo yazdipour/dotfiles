@@ -3,6 +3,7 @@
 #New-Item $profile -Type File -Force
 #notepad $profile
 
+Set-Alias x exit
 Set-Alias l ls
 Set-Alias e explorer
 Set-Alias v nvim
