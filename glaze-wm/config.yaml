@@ -54,23 +54,25 @@ workspaces:
   - name: "9"
 
 window_rules:
+  # Task Manager requires admin privileges to manage and should be ignored unless running
+  # the WM as admin.
+  - command: "ignore"
+    match_process_name: "Taskmgr"
+  # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
+  - command: "set floating"
+    match_class_name: "#32770"
+  # Some applications (eg. Steam) have borders that extend past the normal border size.
+  - command: "resize borders 0px -7px -7px -7px"
+    match_process_name: "steam"
+
   - command: "ignore"
     match_process_name: "FluentSearch"
 
   - command: "ignore"
     match_process_name: "QuickLook"
-  # Task Manager requires admin privileges to manage and should be ignored unless running
-  # the WM as admin.
+
   - command: "ignore"
-    match_process_name: "Taskmgr"
-
-  # Launches system dialogs as floating by default (eg. File Explorer save/open dialog).
-  - command: "set floating"
-    match_class_name: "#32770"
-
-  # Some applications (eg. Steam) have borders that extend past the normal border size.
-  - command: "resize borders 0px -7px -7px -7px"
-    match_process_name: "steam"
+    match_process_name: "Teams"
 
 binding_modes:
   - name: "resize"
@@ -91,23 +93,23 @@ binding_modes:
 keybindings:
   # Shift focus in a given direction.
   - command: "focus left"
-    bindings: ["Alt+H", "Alt+Left"]
+    bindings: ["Alt+H"]
   - command: "focus right"
-    bindings: ["Alt+L", "Alt+Right"]
+    bindings: ["Alt+L"]
   - command: "focus up"
-    bindings: ["Alt+K", "Alt+Up"]
+    bindings: ["Alt+K"]
   - command: "focus down"
-    bindings: ["Alt+J", "Alt+Down"]
+    bindings: ["Alt+J"]
 
   # Move focused window in a given direction.
   - command: "move left"
-    bindings: ["Alt+Shift+H", "Alt+Shift+Left"]
+    bindings: ["Alt+Shift+H"]
   - command: "move right"
-    bindings: ["Alt+Shift+L", "Alt+Shift+Right"]
+    bindings: ["Alt+Shift+L"]
   - command: "move up"
-    bindings: ["Alt+Shift+K", "Alt+Shift+Up"]
+    bindings: ["Alt+Shift+K"]
   - command: "move down"
-    bindings: ["Alt+Shift+J", "Alt+Shift+Down"]
+    bindings: ["Alt+Shift+J"]
 
   # Resize focused window by a percentage or pixel amount.
   - command: "resize width -2%"
@@ -158,8 +160,8 @@ keybindings:
 
   # Launch CMD terminal (alternatively `exec wt` or `exec %ProgramFiles%/Git/git-bash.exe`
   # to start Windows Terminal and Git Bash respectively.
-  - command: "exec cmd"
-    binding: "Alt+Enter"
+  # - command: "exec powershell"
+  #   binding: "Alt+N"
 
   # Focus the workspace that last had focus.
   - command: "focus workspace recent"
@@ -193,13 +195,13 @@ keybindings:
 
   # Move focused workspace to a monitor in a given direction.
   - command: "move workspace left"
-    binding: "Alt+A"
+    binding: "Alt+Shift+A"
   - command: "move workspace right"
-    binding: "Alt+F"
+    binding: "Alt+Shift+F"
   - command: "move workspace up"
-    binding: "Alt+D"
+    binding: "Alt+Shift+D"
   - command: "move workspace down"
-    binding: "Alt+S"
+    binding: "Alt+Shift+S"
 
   # Move focused window to a workspace defined in `workspaces` config.
   - commands: ["move to workspace 1", "focus workspace 1"]
