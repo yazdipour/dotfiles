@@ -75,6 +75,7 @@ function cht($_){(curl "https://cht.sh/${_}?Q&style=bw").Content}
 # Modules
 
 Import-Module PSReadLine
+Import-Module -Name Terminal-Icons
 Set-PSReadLineOption -PredictionSource History
 
 Invoke-Expression (&starship init powershell)
