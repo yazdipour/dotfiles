@@ -74,6 +74,9 @@ window_rules:
   - command: "ignore"
     match_process_name: "Teams"
 
+  - command: "ignore"
+    match_process_name: "Telegram"
+
 binding_modes:
   - name: "resize"
     keybindings:
