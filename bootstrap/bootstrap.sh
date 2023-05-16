@@ -19,7 +19,7 @@ sudo apt update
 sudo apt install neovim python3-neovim python3-dev python3-pip -y
 
 # setup dot-files
-git clone https://github.com/yazdipour/dot-files
+git clone --depth 1 https://github.com/yazdipour/dot-files
 ln -s ~/dot-files/zsh/.zshrc  ~/.zshrc
 ln -s ~/dot-files/tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/dot-files/etc/starship.toml ~/.config/starship.toml
