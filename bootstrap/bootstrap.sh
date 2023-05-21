@@ -58,3 +58,5 @@ dos2unix ~/.zshrc
 # Copilot
 npm install -g @githubnext/github-copilot-cli
 github-copilot-cli auth
+
+pip install yt-dlp
