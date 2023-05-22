@@ -10,6 +10,10 @@
             "keys": "ctrl+c"
         },
         {
+            "command": "openNewTabDropdown",
+            "keys": "ctrl+t"
+        },
+        {
             "command": "paste",
             "keys": "ctrl+v"
         },
@@ -18,53 +22,67 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": "scrollDown",
+            "command": {
+                "action": "scrollDown"
+            },
             "keys": "ctrl+j"
         },
         {
-            "command": "scrollUp",
+            "command": {
+                "action": "scrollUp"
+            },
             "keys": "ctrl+k"
         },
         {
-            "command": "closeTab",
+            "command": {
+                "action": "closeTab"
+            },
             "keys": "ctrl+w"
         },
         {
-            "command": "openNewTabDropdown",
-            "keys": "ctrl+t"
-        },
-        {
-            "command": "splitPane",
-            "keys": "ctrl+|"
+            "command": {
+                "action": "splitPane"
+            },
+            "keys": "ctrl+shift+\\"
         }
     ],
     "alwaysShowNotificationIcon": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
+    "initialCols": 122,
+    "initialRows": 32,
+    "language": "en-US",
+    "launchMode": "default",
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "profiles": {
         "defaults": {
+            "colorScheme": "Tokyo",
+            "cursorShape": "vintage",
+            "elevate": false,
+            "experimental.retroTerminalEffect": false,
             "font": {
-                "face": "Hack"
-            }
+                "weight": "thin",
+                "face": "CaskaydiaCove NF Mono"
+            },
+            "opacity": 70,
+            "padding": "8",
+            "suppressApplicationTitle": false,
+            "useAcrylic": true,
+            "useAtlasEngine": false
         },
         "list": [
             {
-                "font": {
-                    "face": "Hack"
-                },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "name": "Windows PowerShell"
+                "name": "Windows PowerShell",
+                "opacity": 0,
+                "useAcrylic": true
             },
             {
-                "colorScheme": "Vintage",
-                "font": {
-                    "face": "Hack"
-                },
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
+                "colorScheme": "Ubuntu-ColorScheme",
                 "source": "Windows.Terminal.Wsl"
             },
             {
@@ -89,6 +107,52 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{1bdae7ec-8ca6-5caa-8453-8b6fe78b2748}",
+                "hidden": false,
+                "name": "rancher-desktop-data",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{1cd79813-5972-56cb-badb-ba5ee12693c5}",
+                "hidden": false,
+                "name": "rancher-desktop",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
+                "hidden": false,
+                "name": "Alpine",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": true,
+                "name": "Ubuntu-20.04",
+                "colorScheme": "Ubuntu-ColorScheme",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
+                "hidden": true,
+                "name": "Ubuntu-18.04",
+                "colorScheme": "Ubuntu-ColorScheme",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{4dd1e689-b517-5f39-947d-78e8a8bdf958}",
+                "hidden": false,
+                "name": "Ubuntu 20.04.6 LTS",
+                "colorScheme": "Ubuntu-ColorScheme",
+                "source": "CanonicalGroupLimited.Ubuntu20.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "guid": "{24a0533e-913b-5f8c-a5cb-6be85a4c9e70}",
+                "hidden": false,
+                "name": "Ubuntu 18.04.6 LTS",
+                "colorScheme": "Ubuntu-ColorScheme",
+                "source": "CanonicalGroupLimited.Ubuntu18.04LTS_79rhkp1fndgsc"
             }
         ]
     },
@@ -115,6 +179,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#1A1A1A",
+            "black": "#121212",
+            "blue": "#4B8CFF",
+            "brightBlack": "#666666",
+            "brightBlue": "#5DB2FF",
+            "brightCyan": "#5AC8FF",
+            "brightGreen": "#DEB3FF",
+            "brightPurple": "#AC5EFF",
+            "brightRed": "#FF4A6F",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#3BF1FF",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2FE6FF",
+            "foreground": "#F1F1F1",
+            "green": "#BE9DDF",
+            "name": "Tokyo",
+            "purple": "#A73BFF",
+            "red": "#FF3677",
+            "selectionBackground": "#595959",
+            "white": "#F1F1F1",
+            "yellow": "#15FFF5"
         },
         {
             "background": "#012456",
@@ -293,7 +380,7 @@
             "cyan": "#3A96DD",
             "foreground": "#FFFFFF",
             "green": "#26A269",
-            "name": "Ubuntu-22.04-ColorScheme",
+            "name": "Ubuntu-ColorScheme",
             "purple": "#881798",
             "red": "#C21A23",
             "selectionBackground": "#FFFFFF",
@@ -324,5 +411,7 @@
             "yellow": "#808000"
         }
     ],
-    "showTerminalTitleInTitlebar": true
+    "showTerminalTitleInTitlebar": true,
+    "theme": "dark",
+    "themes": []
 }
