@@ -77,6 +77,9 @@ window_rules:
   - command: "ignore"
     match_process_name: "Telegram"
 
+  - command: "ignore"
+    match_process_name: "StickyNotes"
+
 binding_modes:
   - name: "resize"
     keybindings:
