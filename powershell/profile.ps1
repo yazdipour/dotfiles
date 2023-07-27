@@ -12,6 +12,7 @@ Set-Alias grep rg
 Set-Alias find fd
 Set-Alias bget Start-BitsTransfer
 Set-Alias rmbin Clear-RecycleBin
+Set-Alias which where.exe
 Set-Alias about winfetch
 function q{Invoke-command -ScriptBlock {exit}}
 function pt{procs --tree}
