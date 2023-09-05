@@ -69,10 +69,12 @@ function beeep(){[console]::beep(2000,500)}
 
 ## UTILS
 function weather($_){(curl "http://wttr.in/${_}").Content}
+function cal(){wsl cal}
+
 function mp4tomp3(){ffmpeg -i}
 function compressmp4($_){ffmpeg -i $_ -vcodec h264 -acodec mp2 output.mp4}
-function cht($_){(curl "https://cht.sh/${_}?Q&style=bw").Content}
-function penv(){python -m venv .venv} 
+
+function pythonenv(){python -m venv .venv} 
 
 # Modules
 
