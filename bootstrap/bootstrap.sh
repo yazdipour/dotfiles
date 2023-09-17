@@ -8,27 +8,11 @@ cargo install procs
 cargo install ripgrep
 cargo install fd-find
 
-# font
-curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip
-
-# VIM
-# To install nvim https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu
-sudo apt-get install software-properties-common -y
-sudo add-apt-repository ppa:neovim-ppa/stable
-sudo apt update
-sudo apt install neovim python3-neovim python3-dev python3-pip -y
-
 # setup dot-files
 git clone --depth 1 https://github.com/yazdipour/dot-files
 ln -s ~/dot-files/zsh/.zshrc  ~/.zshrc
 ln -s ~/dot-files/tmux/.tmux.conf ~/.tmux.conf
 ln -s ~/dot-files/etc/starship.toml ~/.config/starship.toml
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
-ln -s ~/dot-files/nvim/astronvim-config/user/ ~/.config/nvim/lua/; nvim +PackerSync
-
-# Node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-nvm install node
 
 # tmux
 sudo apt install tmux -y
@@ -41,14 +25,6 @@ sudo service ssh status
 sudo ufw allow ssh
 sudo ufw enable
 
-# nvim instead of vi
-sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-sudo update-alternatives --config vi
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-sudo update-alternatives --config vim
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-sudo update-alternatives --config editor
-
 #zsh
 sudo apt install zsh -y
 curl -L git.io/antigen > $HOME/antigen.zsh
@@ -59,4 +35,31 @@ dos2unix ~/.zshrc
 npm install -g @githubnext/github-copilot-cli
 github-copilot-cli auth
 
+#############
+#### VIM ####
+#############
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+sudo mv ./nvim.appimage /usr/local/bin/nvim
+sudo chmod +x /usr/local/bin/nvim
+# Kickstart.NVIM
+git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+
+# nvim instead of vi
+sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+sudo update-alternatives --config vi
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+sudo update-alternatives --config vim
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+sudo update-alternatives --config editor
+
+###############
+#### More? ####
+###############
 pip install yt-dlp
+
+# Node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+nvm install node
+
+# font
+curl https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/CascadiaCode.zip
