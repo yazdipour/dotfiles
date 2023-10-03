@@ -81,8 +81,9 @@ winget install -e --id Yarn.Yarn
 winget install -e --id GoLang.Go.1.19
 winget install -e --id OpenJS.NodeJS.LTS
 winget install -e --id=Nvidia.GeForceExperience
-winget install --id=Python.Python.3.10  -e
-winget install --id=JetBrains.IntelliJIDEA.Community  -e
+winget install -e --id=Python.Python.3.10
+winget install -e --id=JetBrains.IntelliJIDEA.Community
+winget install -e --id=Microsoft.Sysinternals.ProcessExplorer
 scoop install k9s
 scoop install terraform
 choco install kubernetes-helm -y
