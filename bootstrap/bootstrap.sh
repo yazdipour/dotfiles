@@ -4,8 +4,9 @@ sudo apt install neofetch dos2unix hexcurse figlet bat aria2 tldr -y
 sudo apt install default-jdk -y
 sudo apt install golang-go -y
 sudo apt install cargo -y
+sudo apt install ripgrep -y
+
 cargo install procs
-cargo install ripgrep
 cargo install fd-find
 
 # setup dot-files
