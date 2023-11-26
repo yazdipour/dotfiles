@@ -18,6 +18,7 @@ antigen bundle zsh-users/zsh_codex
 
 # Load the theme.
 # antigen theme robbyrussell
+antigen theme af-magic
 
 # Tell Antigen that you're done.
 antigen apply
