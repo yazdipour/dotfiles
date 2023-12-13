@@ -1,1 +1,4 @@
 openaiapirc
+.DS_Store
+tmux/plugins/
+raycast
