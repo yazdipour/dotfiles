@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo apt-get install stow -y
 sudo apt install curl htop python3 w3m unzip -y
 sudo apt install neofetch dos2unix hexcurse figlet bat aria2 tldr -y
 sudo apt install default-jdk -y
