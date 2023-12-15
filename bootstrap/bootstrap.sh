@@ -19,6 +19,7 @@ ln -s ~/dot-files/etc/starship.toml ~/.config/starship.toml
 # tmux
 sudo apt install tmux -y
 wget https://raw.githubusercontent.com/yazdipour/dot-files/master/.tmux.config -O ~/.tmux.conf #copy configs here and then kill server
+git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux kill-server
 
 # ssh
