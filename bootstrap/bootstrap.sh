@@ -19,7 +19,6 @@ cargo install --locked procs bat eza fd-find zoxide
 git clone --depth 1 https://github.com/yazdipour/dot-files
 ln -s ~/dot-files/zsh/.zshrc  ~/.zshrc
 ln -s ~/dot-files/tmux/.tmux.conf ~/.tmux.conf
-ln -s ~/dot-files/etc/starship.toml ~/.config/starship.toml
 
 # tmux
 sudo apt install tmux -y
