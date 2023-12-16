@@ -1,14 +1,19 @@
 #!/bin/bash
 sudo apt-get install stow -y
-sudo apt install curl htop python3 w3m unzip -y
-sudo apt install neofetch dos2unix hexcurse figlet bat aria2 tldr -y
+sudo apt install curl htop python3 unzip -y
+sudo apt install neofetch -y
+sudo apt install dos2unix -y
+sudo apt install hexcurse -y
+sudo apt install figlet -y
+sudo apt install aria2 -y
+sudo apt install tldr -y
 sudo apt install default-jdk -y
 sudo apt install golang-go -y
 sudo apt install cargo -y
 sudo apt install ripgrep -y
+sudo apt install fzf -y
 
-cargo install procs
-cargo install fd-find
+cargo install --locked procs bat eza fd-find
 
 # setup dot-files
 git clone --depth 1 https://github.com/yazdipour/dot-files
