@@ -13,7 +13,7 @@ sudo apt install cargo -y
 sudo apt install ripgrep -y
 sudo apt install fzf -y
 
-cargo install --locked procs bat eza fd-find
+cargo install --locked procs bat eza fd-find zoxide
 
 # setup dot-files
 git clone --depth 1 https://github.com/yazdipour/dot-files
