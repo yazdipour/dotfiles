@@ -15,6 +15,9 @@ sudo apt install fzf -y
 
 cargo install --locked procs bat eza fd-find zoxide
 
+# Brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # ssh
 sudo apt install openssh-server -y
 sudo service ssh status
@@ -22,7 +25,8 @@ sudo ufw allow ssh
 sudo ufw enable
 
 # tmux
-sudo apt install tmux -y
+#sudo apt install tmux -y ## for now tmux on ubuntu repos are old, use brew
+brew install tmux
 git clone --depth 1 https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux kill-server
 
@@ -30,13 +34,11 @@ tmux kill-server
 sudo apt install zsh -y
 curl -L git.io/antigen > $HOME/antigen.zsh
 
-#############
-#### VIM ####
-#############
+# VIM
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 sudo mv ./nvim.appimage /usr/local/bin/nvim
 sudo chmod +x /usr/local/bin/nvim
-# Kickstart.NVIM
+## Kickstart.NVIM
 git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 
 # nvim instead of vi
