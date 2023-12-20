@@ -53,6 +53,7 @@ scoop install ripgrep
 scoop install fd
 scoop install fzf
 scoop install zoxide
+scoop install ffmpeg
 
 # DEV
 Install-Module Watch -Scope CurrentUser
