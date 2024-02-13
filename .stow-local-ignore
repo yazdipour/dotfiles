@@ -2,3 +2,12 @@
 misc
 #LICENSE
 ^/.*\.org
+
+/bin
+/bootstrap
+/espanso
+/glaze-wm
+/starship
+/powershell
+/vim
+/windows-terminal
