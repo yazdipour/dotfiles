@@ -1,29 +1,34 @@
+ZSH_THEME='frontcube'
 # antigen
+rm ~/.antigen/.lock -f
 export ANTIGEN="$HOME/dot-files/zsh/.antigenrc"
 source ~/dot-files/zsh/antigen.zsh
 antigen init ~/dot-files/zsh/.antigenrc
 
 #PATH
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/aws-tools/"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #ALIAS
+alias lsrepo='cd /etc/apt/sources.list.d/; ls'
 alias editrepo='sudo vi /etc/apt/sources.list'
-alias edittmux='vi ~/.tmux.conf'
-alias editant="vi $ANTIGEN"
-alias editv='vi ~/dot-files/astronvim-config/user/init.lua'
-alias editp='vi ~/.zshrc; source ~/.zshrc'
+alias edittmux='v ~/.tmux.conf'
+alias editant="v $ANTIGEN"
+alias editv='v ~/dot-files/astronvim-config/user/init.lua'
+alias editp='v ~/.zshrc; source ~/.zshrc'
 
 function cd { builtin cd "$@" && ls }
 alias q='exit'
 alias t='tmux'
-alias l='exa -laF'
-alias la='ls -A'
-alias ll='ls -alF'
-alias lt='exa --tree'
-alias ltt='exa -alF --tree'
+alias l='eza -laF'
+alias la='eza -A'
+alias ll='eza -alF'
+alias lt='eza -l -T --git-ignore --hyperlink -L 2'
+alias ltt='eza -alF --tree'
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
@@ -31,6 +36,7 @@ alias cls='clear'
 alias v='nvim'
 alias grep='rg'
 alias find='fd'
+alias cat='bat --style=plain'
 alias countfile='ls -l . | egrep -c '\''^-'\'''
 alias sizedir='du -shc ./*'
 alias p1='ping 1.1.1.1'
@@ -71,9 +77,11 @@ alias gitl='git log --graph --oneline --decorate'
 alias dockstopall='docker stop $(docker ps -q)' #stop all containers
 alias dockrmall='docker rm $(docker ps -q)'
 
-eval "$(starship init zsh)"
+# EVAL
+eval "$(zoxide init zsh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# TMUX
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
+# Automatically start tmux
+if [ -z "$TMUX" ]; then
+    tmux attach -t 1 || tmux new -s 1
 fi
