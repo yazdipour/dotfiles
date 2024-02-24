@@ -1,9 +1,9 @@
 ZSH_THEME='frontcube'
 # antigen
 rm ~/.antigen/.lock -f
-export ANTIGEN="$HOME/dot-files/zsh/.antigenrc"
-source ~/dot-files/zsh/antigen.zsh
-antigen init ~/dot-files/zsh/.antigenrc
+export ANTIGEN="$HOME/.config/antigen/.antigenrc"
+source ~/.config/antigen/antigen.zsh
+antigen init ~/antigen/.antigenrc
 
 #PATH
 export BUN_INSTALL="$HOME/.bun"
@@ -18,7 +18,7 @@ alias lsrepo='cd /etc/apt/sources.list.d/; ls'
 alias editrepo='sudo vi /etc/apt/sources.list'
 alias edittmux='v ~/.tmux.conf'
 alias editant="v $ANTIGEN"
-alias editv='v ~/dot-files/astronvim-config/user/init.lua'
+alias editv='cd ~/.config/nvim/; ls'
 alias editp='v ~/.zshrc; source ~/.zshrc'
 
 function cd { builtin cd "$@" && ls }
@@ -72,6 +72,7 @@ alias gita='git add '
 alias gitm='git commit -m '
 alias gitconfig='git config --list'
 alias gitl='git log --graph --oneline --decorate'
+alias githubemail='git config user.email "yazdipour@users.noreply.github.com"'
 
 # DOCKER
 alias dockstopall='docker stop $(docker ps -q)' #stop all containers

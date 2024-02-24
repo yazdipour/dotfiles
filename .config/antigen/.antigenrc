@@ -12,7 +12,6 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen theme af-magic
-export ZSH_CUSTOM="$HOME"
 
 # Tell Antigen that you're done.
 antigen apply
