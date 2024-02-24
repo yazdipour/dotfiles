@@ -7,14 +7,12 @@ antigen bundle git
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-antigen bundle web-search
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
-
-# Load the theme
 antigen theme af-magic
+export ZSH_CUSTOM="$HOME"
 
 # Tell Antigen that you're done.
 antigen apply
