@@ -7,17 +7,14 @@ antigen bundle git
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-antigen bundle web-search
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 export ZSH_CUSTOM="$HOME"
-source "$ZSH_CUSTOM/plugins/zsh_codex/zsh_codex.plugin.zsh"
-antigen bundle zsh-users/zsh_codex
 
 # Load the theme.
-# antigen theme robbyrussell
+antigen theme af-magic
 
 # Tell Antigen that you're done.
 antigen apply
