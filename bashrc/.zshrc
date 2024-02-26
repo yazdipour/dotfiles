@@ -77,6 +77,9 @@ alias githubemail='git config user.email "yazdipour@users.noreply.github.com"'
 # DOCKER
 alias dockstopall='docker stop $(docker ps -q)' #stop all containers
 alias dockrmall='docker rm $(docker ps -q)'
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcs='docker-compose stop'
 
 # EVAL
 eval "$(zoxide init zsh)"
