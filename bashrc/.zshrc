@@ -73,6 +73,7 @@ alias gitm='git commit -m '
 alias gitconfig='git config --list'
 alias gitl='git log --graph --oneline --decorate'
 alias githubemail='git config user.email "yazdipour@users.noreply.github.com"'
+alias gitundo='git reset --soft HEAD~1'
 
 # DOCKER
 alias dockstopall='docker stop $(docker ps -q)' #stop all containers
