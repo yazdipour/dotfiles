@@ -3,7 +3,7 @@ ZSH_THEME='frontcube'
 rm ~/.antigen/.lock -f
 export ANTIGEN="$HOME/.config/antigen/.antigenrc"
 source ~/.config/antigen/antigen.zsh
-antigen init ~/antigen/.antigenrc
+antigen init $ANTIGEN
 
 #PATH
 export BUN_INSTALL="$HOME/.bun"
@@ -83,6 +83,6 @@ eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Automatically start tmux
-if [ -z "$TMUX" ]; then
-    tmux attach -t 1 || tmux new -s 1
-fi
+# if [ -z "$TMUX" ]; then
+#     tmux attach -t 1 || tmux new -s 1
+# fi
