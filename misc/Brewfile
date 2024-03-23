@@ -1,0 +1,44 @@
+# Tap additional repositories
+tap "homebrew/bundle"
+
+# necassary-stuff
+brew "stow"
+brew "zsh"
+brew "tmux"
+
+# vim
+brew "neovim"
+brew "tree-sitter"
+
+# SDK
+brew "python@3.11"
+brew "pyenv"
+brew "go"
+brew "rust"
+
+# terminal
+brew "unzip"
+brew "procs"
+brew "bat"
+brew "eza"
+brew "fd" 
+brew "zoxide"
+brew "htop"
+brew "curl"
+brew "neofetch"
+brew "dos2unix"
+brew "hexcurse"
+brew "figlet"
+brew "aria2"
+brew "tldr"
+brew "ripgrep"
+brew "fzf"
+
+# dev tools
+brew "lazygit"
+brew "gh"
+
+# Install GUI applications (macOS Only)
+# cask "visual-studio-code" # Code editor
+# Install applications from the Mac App Store
+# mas "Xcode" # IDE for macOS
