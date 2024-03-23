@@ -12,7 +12,7 @@ cd ~/dotfiles; sudo chmod +x stow_all.sh; ./stow_all.sh
 A complicated example would be a config file located deep inside subfolders: nvim’s or neovim’s init.vim or init.lua file. It is present in $HOME/.config/nvim/init.vim. For Stow to understand, it must be placed like this – $HOME/dotfiles/nvim/.config/nvim/init.vim
 
 ```sh
-stow bashrc myDIRECTORY
+stow <dir>
 
 #Don’t forget to stow every time you sync!
 # stow <packagename> # activates symlink
