@@ -3,4 +3,5 @@ misc
 #LICENSE
 ^/.*\.org
 
+\etc
 /etc
