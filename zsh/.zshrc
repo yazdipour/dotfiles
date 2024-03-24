@@ -2,9 +2,11 @@
 export EDITOR=nvim
 export HOMEBREW_EDITOR=nvim
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$HOME/.config/bin:$PATH"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/aws-tools/"
+export PATH="$PATH:$HOME/.config/bin"
+export PATH="$PATH:$BUN_INSTALL/bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/aws-tools/"
+export PATH="$PATH:$HOME/.cargo/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
