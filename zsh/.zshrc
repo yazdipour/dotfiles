@@ -56,10 +56,15 @@ alias dl='aria2c'
 alias countfile='ls -l . | egrep -c '\''^-'\'''
 alias t='tmux'
 alias v='nvim'
-alias f="fzf-tmux --preview 'bat --color=always {}'"
-bindkey -s ^o 'z **\t'
-bindkey -s ^f 'v **\t'
-export FZF_DEFAULT_OPTS=" --preview 'bat --color=always {}'"
+
+# FZF
+export FZF_DEFAULT_OPTS='--preview "bat -n --color=always {}"'
+export FZF_ALT_C_OPTS="
+  --walker-skip .git,node_modules,target
+  --preview 'tree -C {}'"
+alias f="fzf-tmux"
+bindkey -s ^o '\ec' # bind ctrl+o=alt-c to cd
+bindkey -s ^f 'v ^t' # bind ctrl+f to open fzf in vim
 
 # DEV
 alias -s {md,txt,js,css,html,htm,c,cpp}=nvim
