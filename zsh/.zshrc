@@ -58,13 +58,24 @@ alias t='tmux'
 alias v='nvim'
 
 # FZF
-export FZF_DEFAULT_OPTS='--preview "bat -n --color=always {}"'
+# CTRL+R: search history
+# --> CTRL-/ to toggle small preview window to see the full command
+# --> CTRL-Y to copy the command into clipboard using pbcopy
+export FZF_CTRL_R_OPTS="
+  --preview 'echo {}' --preview-window up:3:hidden:wrap
+  --bind 'ctrl-/:toggle-preview'
+  --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+  --color header:italic
+  --header 'Press CTRL-Y to copy command into clipboard'"
+# CTRL+T: search for files in the current directory
+export FZF_CTRL_T_OPTS='--preview "bat -n --color=always {}"'
+# ALT+C=CTRL+F: cd into the selected directory
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
 alias f="fzf-tmux"
-bindkey -s ^o '\ec' # bind ctrl+o=alt-c to cd
-bindkey -s ^f 'v ^t' # bind ctrl+f to open fzf in vim
+bindkey -s ^f '\ec' # bind ctrl+f=alt-c to cd
+bindkey -s ^v 'v ^t' # bind ctrl+v to open fzf in vim
 
 # DEV
 alias -s {md,txt,js,css,html,htm,c,cpp}=nvim
