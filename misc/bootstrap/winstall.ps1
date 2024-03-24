@@ -41,6 +41,7 @@ winget install --id=Valve.Steam  -e
 winget install -e --id Meltytech.Shotcut
 winget install -e --id Datronicsoft.SpacedeskDriver.Server
 winget install -e --id SourceFoundry.HackFonts 
+winget install -e --id DEVCOM.JetBrainsMonoNerdFont
 scoop install paint.net
 scoop install nano
 scoop bucket add nerd-fonts
