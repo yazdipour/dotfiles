@@ -25,13 +25,6 @@ return { -- LSP Configuration & Plugins
     -- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
     -- processes that communicate with some "client" - in this case, Neovim!
     --
-    -- LSP provides Neovim with features like:
-    --  - Go to definition
-    --  - Find references
-    --  - Autocompletion
-    --  - Symbol Search
-    --  - and more!
-    --
     --  This function gets run when an LSP attaches to a particular buffer.
     --    That is to say, every time a new file is opened that is associated with
     --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
@@ -39,10 +32,6 @@ return { -- LSP Configuration & Plugins
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
-        -- NOTE: Remember that lua is a real programming language, and as such it is possible
-        -- to define small helper and utility functions so you don't have to repeat yourself
-        -- many times.
-        --
         -- In this case, we create a function that lets us more easily define mappings specific
         -- for LSP related items. It sets the mode, buffer and description for us each time.
         local map = function(keys, func, desc)
@@ -126,6 +115,7 @@ return { -- LSP Configuration & Plugins
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+    --  SERVERS: Language Servers
     local servers = {
       -- clangd = {},
       -- gopls = {},
@@ -139,7 +129,10 @@ return { -- LSP Configuration & Plugins
       -- But for many setups, the LSP (`tsserver`) will work just fine
       -- tsserver = {},
       --
-
+      html = {},
+      tsserver = {
+        capabilities = {},
+      },
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
@@ -155,20 +148,22 @@ return { -- LSP Configuration & Plugins
         },
       },
     }
-
-    -- Ensure the servers and tools above are installed
-    --  To check the current status of installed tools and/or manually install
-    --  other tools, you can run
-    --    :Mason
-    --
-    --  You can press `g?` for help in this menu
     require('mason').setup()
-
-    -- You can add other tools here that you want Mason to install
-    -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
+    -- Servers vs Tools:
+    -- difference between `ensure_installed` and `servers` is that `ensure_installed` is a list of
+    -- strings, while `servers` is a table of tables. This is because `mason-tool-installer` expects
+    -- a list of strings to install, while `mason-lspconfig` expects a table of tables to configure
+    -- the LSPs.
+    -- This is a list of tools that are not LSPs, but are still useful to have installed.
+    -- For example, `stylua` is a lua formatter that can be used to format lua code.
+    -- but lua_ls is a lua language server.
+    -- TOOLS: Formatters, Linters, etc.
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format lua code
+      'prettier', -- Used to format javascript codes
+      'isort', -- Used for python support
+      'black', -- Used for python support
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
