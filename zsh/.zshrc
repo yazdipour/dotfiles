@@ -29,11 +29,11 @@ alias lsrepo='cd /etc/apt/sources.list.d/; ls'
 # OS
 alias q='exit'
 alias cls='clear'
-alias l='eza -laF'
-alias la='eza -A'
-alias ll='eza -alF'
-alias lt='eza -l -T --git-ignore --hyperlink -L 2'
-alias ltt='eza -alF --tree'
+alias l='lsd -laF'
+alias la='lsd -A'
+alias ll='lsd -alF'
+alias lt='lsd -l -T --git-ignore --hyperlink -L 2'
+alias ltt='lsd -alF --tree'
 alias cp='cp --interactive'
 alias mv='mv --interactive'
 alias rm='rm --interactive'
@@ -54,13 +54,15 @@ alias uziptar='tar -xzf'
 alias dif='diff -yZB'
 alias dl='aria2c'
 alias countfile='ls -l . | egrep -c '\''^-'\'''
+alias t='tmux'
+alias v='nvim'
 alias f="fzf-tmux --preview 'bat --color=always {}'"
-bindkey -s ^f "fzf-tmux --preview 'bat --color=always {}'\n"
+bindkey -s ^o 'z **\t'
+bindkey -s ^f 'v **\t'
+export FZF_DEFAULT_OPTS=" --preview 'bat --color=always {}'"
 
 # DEV
 alias -s {md,txt,js,css,html,htm,c,cpp}=nvim
-alias t='tmux'
-alias v='nvim'
 alias py='python'
 alias pip3='sudo /usr/bin/pip3'
 alias c='code'
