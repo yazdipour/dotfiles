@@ -15,6 +15,7 @@ brew "python@3.11"
 brew "pyenv"
 brew "go"
 brew "rust"
+brew "delve" # For Go DAP
 
 # terminal
 brew "unzip"
