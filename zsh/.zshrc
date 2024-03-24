@@ -2,6 +2,7 @@
 export EDITOR=nvim
 export HOMEBREW_EDITOR=nvim
 export BUN_INSTALL="$HOME/.bun"
+export PATH="$HOME/.config/bin:$PATH"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/aws-tools/"
 export NVM_DIR="$HOME/.nvm"
@@ -19,7 +20,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true" # disable dirty check for git repo to speed
 
 # --- alias ---
 # CONFIG
-alias edittmux='v ~/.tmux.conf'
+alias editt='v ~/.tmux.conf'
 alias editant="v $ANTIGEN"
 alias editv='v ~/.config/nvim/'
 alias editp='v ~/.zshrc; . ~/.zshrc'
@@ -54,8 +55,14 @@ alias uziptar='tar -xzf'
 alias dif='diff -yZB'
 alias dl='aria2c'
 alias countfile='ls -l . | egrep -c '\''^-'\'''
-alias t='tmux'
 alias v='nvim'
+
+# TMUX
+function t(){ tmux new -s "${PWD##*/}" }
+alias ta='tmux attach -t'
+alias tl='tmux list-sessions'
+alias tk='tmux kill-session -t'
+alias ts='tmux switch -t'
 
 # FZF
 # CTRL+R: search history
@@ -88,7 +95,7 @@ alias hx='hexcurse'
 # GIT
 alias gitc='git clone'
 alias gits='git status'
-alias gitl='git log'
+function gitlog() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative $@; }
 alias gitpull='git pull origin '
 alias gitma='git commit -a -m '
 alias gitp='git push origin '
@@ -114,7 +121,3 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(gh copilot alias -- zsh)"
 
-# Automatically start tmux
-# if [ -z "$TMUX" ]; then
-#     tmux attach -t 1 || tmux new -s 1
-# fi
