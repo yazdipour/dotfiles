@@ -18,6 +18,7 @@ brew "rust"
 brew "delve" # For Go DAP
 
 # terminal
+brew "tree"
 brew "unzip"
 brew "procs"
 brew "bat"
