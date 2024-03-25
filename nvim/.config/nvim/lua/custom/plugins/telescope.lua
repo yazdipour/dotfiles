@@ -18,7 +18,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       end,
     },
     { 'nvim-telescope/telescope-ui-select.nvim' },
-
+    { 'nvim-telescope/telescope-file-browser.nvim' },
     -- Useful for getting pretty icons, but requires a Nerd Font.
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
@@ -41,6 +41,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
       --   },
       -- },
       pickers = {
+        find_files = {
+          theme = 'ivy',
+          hidden = true,
+          ignore = { '.git', 'node_modules', 'vendor' },
+        },
         colorscheme = {
           enable_preview = true,
         },
@@ -49,12 +54,20 @@ return { -- Fuzzy Finder (files, lsp, etc)
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
+        file_browser = {
+          theme = 'ivy',
+          -- disables netrw and use telescope-file-browser in its place
+          hijack_netrw = true,
+        },
       },
     }
 
     -- Enable telescope extensions, if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
+    pcall(require('telescope').load_extension, 'file_browser')
+
+    vim.keymap.set('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[F]ile [B]rowser' })
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
