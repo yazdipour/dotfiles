@@ -6,16 +6,14 @@
             "command": {
                 "action": "copy",
                 "singleLine": false
-            },
-            "keys": "ctrl+c"
+            }
         },
         {
             "command": "openNewTabDropdown",
-            "keys": "ctrl+t"
+            "keys": "ctrl+shift+t"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "command": "paste"
         },
         {
             "command": "find",
@@ -37,52 +35,89 @@
             "command": {
                 "action": "closeTab"
             },
-            "keys": "ctrl+w"
+            "keys": "ctrl+shift+w"
         },
         {
             "command": {
                 "action": "splitPane"
             },
             "keys": "ctrl+shift+\\"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+w"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+q"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+alt+shift+w"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+space"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+t"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "closePane"
         }
     ],
     "alwaysShowNotificationIcon": false,
+    "autoHideWindow": false,
+    "centerOnLaunch": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
+    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "initialCols": 122,
     "initialRows": 32,
     "language": "en-US",
-    "launchMode": "default",
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "launchMode": "fullscreen",
+    "minimizeToNotificationArea": false,
+    "newTabMenu": [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
     "profiles": {
         "defaults": {
-            "colorScheme": "Tokyo",
-            "cursorShape": "vintage",
+            "colorScheme": "Tango Dark",
             "elevate": false,
             "experimental.retroTerminalEffect": false,
             "font": {
-                "weight": "thin",
-                "face": "CaskaydiaCove NF Mono"
+                "face": "CaskaydiaCove NF Mono",
+                "weight": "thin"
             },
             "opacity": 70,
             "padding": "8",
             "suppressApplicationTitle": false,
             "useAcrylic": true,
-            "useAtlasEngine": false
+            "useAtlasEngine": true
         },
         "list": [
             {
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell",
-                "opacity": 0,
                 "useAcrylic": true
             },
             {
+                "colorScheme": "Tokyo",
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "colorScheme": "Ubuntu-ColorScheme",
                 "source": "Windows.Terminal.Wsl"
             },
             {
@@ -109,50 +144,10 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{1bdae7ec-8ca6-5caa-8453-8b6fe78b2748}",
-                "hidden": false,
-                "name": "rancher-desktop-data",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{1cd79813-5972-56cb-badb-ba5ee12693c5}",
-                "hidden": false,
-                "name": "rancher-desktop",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
                 "guid": "{1777cdf0-b2c4-5a63-a204-eb60f349ea7c}",
                 "hidden": false,
                 "name": "Alpine",
                 "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
-                "hidden": true,
-                "name": "Ubuntu-20.04",
-                "colorScheme": "Ubuntu-ColorScheme",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
-                "hidden": true,
-                "name": "Ubuntu-18.04",
-                "colorScheme": "Ubuntu-ColorScheme",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{4dd1e689-b517-5f39-947d-78e8a8bdf958}",
-                "hidden": false,
-                "name": "Ubuntu 20.04.6 LTS",
-                "colorScheme": "Ubuntu-ColorScheme",
-                "source": "CanonicalGroupLimited.Ubuntu20.04LTS_79rhkp1fndgsc"
-            },
-            {
-                "guid": "{24a0533e-913b-5f8c-a5cb-6be85a4c9e70}",
-                "hidden": false,
-                "name": "Ubuntu 18.04.6 LTS",
-                "colorScheme": "Ubuntu-ColorScheme",
-                "source": "CanonicalGroupLimited.Ubuntu18.04LTS_79rhkp1fndgsc"
             }
         ]
     },
@@ -179,29 +174,6 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
-        },
-        {
-            "background": "#1A1A1A",
-            "black": "#121212",
-            "blue": "#4B8CFF",
-            "brightBlack": "#666666",
-            "brightBlue": "#5DB2FF",
-            "brightCyan": "#5AC8FF",
-            "brightGreen": "#DEB3FF",
-            "brightPurple": "#AC5EFF",
-            "brightRed": "#FF4A6F",
-            "brightWhite": "#FFFFFF",
-            "brightYellow": "#3BF1FF",
-            "cursorColor": "#FFFFFF",
-            "cyan": "#2FE6FF",
-            "foreground": "#F1F1F1",
-            "green": "#BE9DDF",
-            "name": "Tokyo",
-            "purple": "#A73BFF",
-            "red": "#FF3677",
-            "selectionBackground": "#595959",
-            "white": "#F1F1F1",
-            "yellow": "#15FFF5"
         },
         {
             "background": "#012456",
@@ -365,6 +337,75 @@
             "yellow": "#C4A000"
         },
         {
+            "background": "#1A1A1A",
+            "black": "#121212",
+            "blue": "#4B8CFF",
+            "brightBlack": "#666666",
+            "brightBlue": "#5DB2FF",
+            "brightCyan": "#5AC8FF",
+            "brightGreen": "#DEB3FF",
+            "brightPurple": "#AC5EFF",
+            "brightRed": "#FF4A6F",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#3BF1FF",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#2FE6FF",
+            "foreground": "#F1F1F1",
+            "green": "#BE9DDF",
+            "name": "Tokyo",
+            "purple": "#A73BFF",
+            "red": "#FF3677",
+            "selectionBackground": "#595959",
+            "white": "#F1F1F1",
+            "yellow": "#15FFF5"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-18.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-20.04-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
             "background": "#300A24",
             "black": "#171421",
             "blue": "#0037DA",
@@ -412,6 +453,8 @@
         }
     ],
     "showTerminalTitleInTitlebar": true,
+    "tabWidthMode": "equal",
     "theme": "dark",
-    "themes": []
+    "themes": [],
+    "useAcrylicInTabRow": true
 }
