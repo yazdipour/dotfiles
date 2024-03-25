@@ -14,11 +14,11 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # ANTIGEN
+export DISABLE_UNTRACKED_FILES_DIRTY="true" # disable dirty check for git repo to speed up zsh
 export ANTIGEN="$HOME/.config/antigen/.antigenrc" # antigen - if fckd? rm -rf ~/.antigen/ 
 rm ~/.antigen/.lock -f
 source ~/.config/antigen/antigen.zsh
 antigen init $ANTIGEN
-DISABLE_UNTRACKED_FILES_DIRTY="true" # disable dirty check for git repo to speed up zsh
 
 # --- alias ---
 # CONFIG
