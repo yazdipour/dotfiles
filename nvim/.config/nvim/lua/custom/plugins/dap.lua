@@ -1,10 +1,128 @@
 return {
-  'rcarriga/nvim-dap-ui',
-  dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
-  library = { plugins = { 'nvim-dap-ui' }, types = true },
+  'mfussenegger/nvim-dap',
+  keys = '<eader>D',
+  dependencies = {
+    { 'rcarriga/nvim-dap-ui' },
+    { 'mfussenegger/nvim-dap-python' },
+    { 'nvim-neotest/nvim-nio' },
+  },
   config = function()
-    local dap, dapui = require 'dap', require 'dapui'
+    local set = vim.keymap.set
 
+    local dap = require 'dap'
+
+    -- text str: lines concatenated with \n
+    local send_to_repl = function(text)
+      local session = dap.session()
+      session:evaluate(text, function(err)
+        if err then
+          require('dap.repl').append(err.message)
+          return
+        end
+      end)
+      require('dap.repl').append(text)
+      -- scroll dap repl to bottom
+      local repl_buf = vim.tbl_filter(function(b)
+        return vim.bo[b].filetype == 'dap-repl'
+      end, vim.api.nvim_list_bufs())[1]
+      -- deferring since otherwise too early
+      vim.defer_fn(function()
+        vim.api.nvim_buf_call(repl_buf, function()
+          vim.cmd [[normal! G]]
+        end)
+      end, 50)
+    end
+
+    set('n', '<leader>Dc', dap.continue, { desc = 'DAP: continue' })
+    set('n', '<F10>', dap.step_over, { desc = 'DAP: step over' })
+    set('n', '<F11>', dap.step_into, { desc = 'DAP: step into' })
+    set('n', '<F12>', dap.step_out, { desc = 'DAP: step out' })
+    set('n', '<leader>Db', dap.toggle_breakpoint, { desc = 'DAP: toggle breakpoint' })
+    set('n', '<leader>De', dap.repl.open, { desc = 'DAP: open repl' })
+    set('n', '<leader>Dr', dap.run_to_cursor, { desc = 'DAP: run to cursor' })
+    set('n', '<leader>Dl', dap.run_last, { desc = 'DAP: run last' })
+    set('n', '<leader>Dt', dap.terminate, { desc = 'DAP: terminate' })
+    -- send to dap repl ala vim-slime
+    set('v', '<C-r><C-r>', function()
+      local selection = table.concat(require('fds.utils').get_selection(), '\n')
+      send_to_repl(selection)
+    end)
+    set('v', '<C-r>k', function()
+      local selection = table.concat(require('fds.utils').get_selection(), '\n')
+      if #selection > 1 then
+        error 'Inspecting variables only works with single lines'
+      end
+      selection = string.format([[print(%s)]], selection[1])
+      send_to_repl(selection)
+    end)
+    set({ 'n', 'v' }, '<C-r>k', function()
+      local selection
+      local mode = vim.api.nvim_get_mode().mode
+      if mode == 'n' then
+        selection = vim.fn.expand '<cword>'
+      else
+        selection = table.concat(require('fds.utils').visual_selection(), '\n')
+        if type(selection) == 'table' then
+          if #selection > 1 then
+            error 'Inspecting variables only works with single lines'
+            return
+          end
+          selection = selection[1]
+        end
+      end
+      send_to_repl(string.format([[print(%s)]], selection))
+    end)
+    set({ 'n', 'v' }, '<C-r>s', function()
+      local selection
+      local mode = vim.api.nvim_get_mode().mode
+      if mode == 'n' then
+        selection = vim.fn.expand '<cword>'
+      else
+        selection = table.concat(require('fds.utils').visual_selection(), '\n')
+        if type(selection) == 'table' then
+          if #selection > 1 then
+            error 'Inspecting variables only works with single lines'
+            return
+          end
+          selection = selection[1]
+        end
+      end
+      send_to_repl(string.format([[print(%s.shape)]], selection))
+    end)
+
+    -- dapui panes don't readjust nicely in height and get distored easily
+    -- this will ensure panes are always toggled with evenly spread height
+    set('n', '<leader>Du', function()
+      require('dapui').toggle()
+      vim.defer_fn(function()
+        local dapui_wins = vim.tbl_filter(function(win)
+          local buf = vim.api.nvim_win_get_buf(win)
+          return string.find(vim.bo[buf].filetype, 'dapui_') ~= nil
+        end, vim.api.nvim_list_wins())
+        local num_wins = #dapui_wins
+        if num_wins > 1 then
+          local screen_height = vim.o.lines - 3
+          local win_height = math.floor(screen_height / 4)
+          for _, win in ipairs(dapui_wins) do
+            vim.api.nvim_win_set_height(win, win_height)
+          end
+        end
+      end, 25)
+    end)
+    vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'Breakpoint' })
+    vim.fn.sign_define('DapStopped', { text = '', texthl = 'Stopped' })
+
+    -- autocompletion
+    vim.api.nvim_create_autocmd('FileType', {
+      pattern = 'dap-repl',
+      callback = function()
+        require('dap.ext.autocompl').attach()
+      end,
+    })
+
+    local python_path = vim.system({ 'which', 'python' }, { text = true }):wait().stdout:gsub('[\r\n]', '')
+    require('dap-python').setup(python_path)
+    local dapui = require 'dapui'
     dapui.setup()
     dap.listeners.before.attach.dapui_config = function()
       dapui.open()
@@ -18,176 +136,5 @@ return {
     dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
     end
-    vim.keymap.set('n', '<leader>lb', dap.toggle_breakpoint, { desc = 'Toggle [L]ine [B]reakpoint' })
   end,
-  keys = {
-    {
-      'n',
-      '<leader>lb',
-      function()
-        require('dap').toggle_breakpoint()
-      end,
-      { noremap = true, desc = 'Toggle [L]ine [B]reakpoint' },
-    },
-    {
-      'n',
-      '<leader>lC',
-      function()
-        require('dap').set_conditional_breakpoint(vim.fn.input 'Breakpoint condition: ')
-      end,
-      { noremap = true, desc = 'Set [L]ine [C]onditional Breakpoint' },
-    },
-    {
-      'n',
-      '<leader>lR',
-      function()
-        require('dap').repl.open()
-      end,
-      { noremap = true, desc = 'Open [L]aunch [R]epl' },
-    },
-    {
-      'n',
-      '<leader>lS',
-      function()
-        require('dap').run_last()
-      end,
-      { noremap = true, desc = 'Run [L]ast' },
-    },
-    {
-      'n',
-      '<leader>lV',
-      function()
-        require('dap').variables()
-      end,
-      { noremap = true, desc = 'Show [L]ocal [V]ariables' },
-    },
-    {
-      'n',
-      '<leader>lC',
-      function()
-        require('dap').commands()
-      end,
-      { noremap = true, desc = 'Show [L]ocal [C]ommands' },
-    },
-    {
-      'n',
-      '<F5>',
-      function()
-        require('dap').continue()
-      end,
-      { noremap = true, desc = 'Continue' },
-    },
-    {
-      'n',
-      '<F10>',
-      function()
-        require('dap').step_over()
-      end,
-      { noremap = true, desc = 'Step [O]ver' },
-    },
-    {
-      'n',
-      '<F11>',
-      function()
-        require('dap').step_into()
-      end,
-      { noremap = true, desc = 'Step [I]nto' },
-    },
-    {
-      'n',
-      '<S-F11>',
-      function()
-        require('dap').step_out()
-      end,
-      { noremap = true, desc = 'Step [O]ut' },
-    },
-    {
-      'n',
-      '<F12>',
-      function()
-        require('dap').toggle_breakpoint()
-      end,
-      { noremap = true, desc = 'Toggle [B]reakpoint' },
-    },
-    {
-      'n',
-      '<leader>lD',
-      function()
-        require('dap').disconnect()
-      end,
-      { noremap = true, desc = 'Disconnect' },
-    },
-    {
-      'n',
-      '<leader>lR',
-      function()
-        require('dap').repl.open()
-      end,
-      { noremap = true, desc = 'Open [R]epl' },
-    },
-    {
-      'n',
-      '<leader>lS',
-      function()
-        require('dap').run_last()
-      end,
-      { noremap = true, desc = 'Run [L]ast' },
-    },
-    {
-      'n',
-      '<leader>lV',
-      function()
-        require('dap').variables()
-      end,
-      { noremap = true, desc = 'Show [L]ocal [V]ariables' },
-    },
-    {
-      'n',
-      '<leader>lC',
-      function()
-        require('dap').commands()
-      end,
-      { noremap = true, desc = 'Show [L]ocal [C]ommands' },
-    },
-    {
-      'n',
-      '<F5>',
-      function()
-        require('dap').continue()
-      end,
-      { noremap = true, desc = 'Continue' },
-    },
-    {
-      'n',
-      '<F10>',
-      function()
-        require('dap').step_over()
-      end,
-      { noremap = true, desc = 'Step Over' },
-    },
-    {
-      'n',
-      '<F11>',
-      function()
-        require('dap').step_into()
-      end,
-      { noremap = true, desc = 'Step Into' },
-    },
-    {
-      'n',
-      '<S-F11>',
-      function()
-        require('dap').step_out()
-      end,
-      { noremap = true, desc = 'Step Out' },
-    },
-    {
-      'n',
-      '<F12>',
-      function()
-        require('dap').toggle_breakpoint()
-      end,
-      { noremap = true, desc = 'Toggle Breakpoint' },
-    },
-  },
 }
