@@ -13,14 +13,30 @@ return { -- Autoformat
       }
     end,
     formatters_by_ft = {
+      sh = { 'beautysh' },
+      bash = { 'beautysh' },
+      c = { 'clang_format' },
+      cpp = { 'clang_format' },
       lua = { 'stylua' },
       python = { 'isort', 'black' },
-      -- You can use a sub-list to tell conform to run *until* a formatter
-      -- is found.
       javascript = { { 'prettierd', 'prettier' } },
+      typescript = { 'prettierd' },
+      markdown = { 'prettierd' },
+      xml = { 'xmlformat' },
+      json = { 'prettierd' },
+      yaml = { 'prettierd' },
       go = { 'goimports', 'gofmt' },
       rust = { 'rustfmt' },
       ['*'] = { 'codespell' },
+    },
+  },
+  keys = {
+    {
+      '<leader>ff',
+      function()
+        require('conform').format()
+      end,
+      desc = '[F]ile [F]ormat',
     },
   },
 }
