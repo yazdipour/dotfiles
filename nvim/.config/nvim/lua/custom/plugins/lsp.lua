@@ -117,19 +117,16 @@ return { -- LSP Configuration & Plugins
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     --  SERVERS: Language Servers
     local servers = {
-      -- clangd = {},
-      -- gopls = {},
-      -- pyright = {},
-      -- rust_analyzer = {},
-      -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-      --
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- But for many setups, the LSP (`tsserver`) will work just fine
-      -- tsserver = {},
-      --
+      clangd = {},
+      gopls = {},
+      pyright = {},
+      rust_analyzer = {},
       html = {},
+      cssls = {},
+      jsonls = {},
+      jdtls = {},
+      pylsp = {},
+      yamlls = {},
       tsserver = {
         capabilities = {},
       },
@@ -150,20 +147,17 @@ return { -- LSP Configuration & Plugins
     }
     require('mason').setup()
     local ensure_installed = vim.tbl_keys(servers or {})
-    -- Servers vs Tools:
-    -- difference between `ensure_installed` and `servers` is that `ensure_installed` is a list of
-    -- strings, while `servers` is a table of tables. This is because `mason-tool-installer` expects
-    -- a list of strings to install, while `mason-lspconfig` expects a table of tables to configure
-    -- the LSPs.
-    -- This is a list of tools that are not LSPs, but are still useful to have installed.
-    -- For example, `stylua` is a lua formatter that can be used to format lua code.
-    -- but lua_ls is a lua language server.
-    -- TOOLS: Formatters, Linters, etc.
+    -- FORMATTERS
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format lua code
-      'prettier', -- Used to format javascript codes
       'isort', -- Used for python support
       'black', -- Used for python support
+      'beautysh',
+      'clang-format',
+      'gofumpt',
+      'rustfmt',
+      'prettierd',
+      'xmlformatter',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
