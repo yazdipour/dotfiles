@@ -271,7 +271,11 @@ require('lazy').setup({
 
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   { import = 'custom.themes' },
+  -- import custom.plugins and every subdirectory
   { import = 'custom.plugins' },
+  { import = 'custom.plugins.languages' },
+  -- import custom.keymaps and every subdirectory
+  { import = 'custom.keymaps' },
 }, {
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
