@@ -12,7 +12,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
 # ANTIGEN
 export DISABLE_UNTRACKED_FILES_DIRTY="true" # disable dirty check for git repo to speed up zsh
 export ANTIGEN="$HOME/.config/antigen/.antigenrc" # antigen - if fckd? rm -rf ~/.antigen/ 
@@ -60,8 +59,8 @@ alias countfile='ls -l . | egrep -c '\''^-'\'''
 alias v='nvim'
 
 # TMUX
-function t(){ tmux new -s "${PWD##*/}" }
-alias ta='tmux attach -t'
+alias t='sesh connect $(sesh list | fzf-tmux)'
+alias ta='tmux attach'
 alias tl='tmux list-sessions'
 alias tk='tmux kill-session -t'
 alias ts='tmux switch -t'
