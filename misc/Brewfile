@@ -32,7 +32,7 @@ brew "dos2unix"
 brew "hexcurse"
 brew "figlet"
 brew "aria2"
-brew "tldr"
+brew "tealdeer"
 brew "ripgrep"
 brew "fzf"
 
