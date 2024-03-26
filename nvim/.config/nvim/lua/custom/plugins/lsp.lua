@@ -55,9 +55,9 @@ return { -- LSP Configuration & Plugins
         --  the definition of its *type*, not where it was *defined*.
         map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
 
-        -- Fuzzy find all the symbols in your current document.
+        -- Fuzzy find all the symbols in your current file.
         --  Symbols are things like variables, functions, types, etc.
-        map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+        map('<leader>fs', require('telescope.builtin').lsp_document_symbols, '[F]ile [S]ymbols')
 
         -- Fuzzy find all the symbols in your current workspace
         --  Similar to document symbols, except searches over your whole project.
