@@ -81,9 +81,8 @@ export FZF_CTRL_T_OPTS='--preview "bat -n --color=always {}"'
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
-alias f="fzf-tmux"
-bindkey -s ^f '\ec' # bind ctrl+f=alt-c to cd
-bindkey -s ^v 'v ^t' # bind ctrl+v to open fzf in vim
+bindkey -s ^p 'sesh connect $(sesh list | fzf-tmux) \n'
+bindkey -s ^f 'v ^t'
 
 # DEV
 alias -s {md,txt,js,css,html,htm,c,cpp}=nvim
