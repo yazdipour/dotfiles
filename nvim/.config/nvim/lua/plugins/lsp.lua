@@ -125,7 +125,7 @@ return { -- LSP Configuration & Plugins
       cssls = {},
       jsonls = {},
       jdtls = {},
-      pylsp = {},
+      debugpy = {},
       yamlls = {},
       tsserver = {
         capabilities = {},
