@@ -20,7 +20,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     { 'nvim-telescope/telescope-ui-select.nvim' },
     { 'nvim-telescope/telescope-file-browser.nvim' },
     -- Useful for getting pretty icons, but requires a Nerd Font.
-    { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    'nvim-tree/nvim-web-devicons',
   },
   config = function()
     --  :Telescope help_tags
@@ -36,18 +36,61 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- See `:help telescope` and `:help telescope.setup()`
     require('telescope').setup {
       defaults = {
+        theme = 'center',
+        file_ignore_patterns = { '.git/', 'node_modules' },
+        layout_config = {
+          height = 0.90,
+          width = 0.90,
+          preview_cutoff = 0,
+          horizontal = { preview_width = 0.60 },
+          vertical = { width = 0.55, height = 0.9, preview_cutoff = 0 },
+          prompt_position = 'top',
+        },
+        path_display = { 'smart' },
+        prompt_position = 'top',
+        prompt_prefix = ' ',
+        selection_caret = ' ',
+        sorting_strategy = 'ascending',
         mappings = {
           i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         },
       },
       pickers = {
         find_files = {
-          theme = 'ivy',
           hidden = true, -- Show hidden files
           ignore = { '.git', 'node_modules', 'vendor' },
+          prompt_prefix = ' ',
+          find_command = { 'fd', '-h' },
         },
         colorscheme = {
           enable_preview = true,
+        },
+        buffers = {
+          prompt_prefix = '󰸩 ',
+        },
+        commands = {
+          prompt_prefix = ' ',
+          layout_config = {
+            height = 0.63,
+            width = 0.78,
+          },
+        },
+        command_history = {
+          prompt_prefix = ' ',
+          layout_config = {
+            height = 0.63,
+            width = 0.58,
+          },
+        },
+        git_files = {
+          prompt_prefix = '󰊢 ',
+          show_untracked = true,
+        },
+        live_grep = {
+          prompt_prefix = '󰱽 ',
+        },
+        grep_string = {
+          prompt_prefix = '󰱽 ',
         },
       },
       extensions = {
@@ -55,9 +98,12 @@ return { -- Fuzzy Finder (files, lsp, etc)
           require('telescope.themes').get_dropdown(),
         },
         file_browser = {
-          theme = 'ivy',
           -- disables netrw and use telescope-file-browser in its place
           hijack_netrw = true,
+        },
+        smart_open = {
+          cwd_only = true,
+          filename_first = true,
         },
       },
     }

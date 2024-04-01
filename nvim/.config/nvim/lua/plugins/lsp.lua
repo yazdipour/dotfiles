@@ -1,8 +1,37 @@
+-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for neovim
-    'williamboman/mason.nvim',
+    --  mason [lsp package manager]
+    --  https://github.com/williamboman/mason.nvim
+    --  https://github.com/Zeioth/mason-extra-cmds
+    {
+      'williamboman/mason.nvim',
+      dependencies = { 'Zeioth/mason-extra-cmds', opts = {} },
+      cmd = {
+        'Mason',
+        'MasonInstall',
+        'MasonUninstall',
+        'MasonUninstallAll',
+        'MasonLog',
+        'MasonUpdate',
+        'MasonUpdateAll', -- this cmd is provided by mason-extra-cmds
+      },
+      opts = {
+        registries = {
+          'github:nvim-java/mason-registry',
+          'github:mason-org/mason-registry',
+        },
+        ui = {
+          icons = {
+            package_installed = '✓',
+            package_uninstalled = '✗',
+            package_pending = '⟳',
+          },
+        },
+      },
+    },
     {
       'williamboman/mason-lspconfig.nvim',
       opts = {
@@ -10,14 +39,51 @@ return { -- LSP Configuration & Plugins
       },
     },
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-
-    -- Useful status updates for LSP.
-    -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
+    --  neodev.nvim [lsp for nvim lua api]
+    { 'folke/neodev.nvim', ft = { 'lua' }, opts = {} },
+    --  Schema Store [lsp schema manager]
+    'b0o/SchemaStore.nvim',
+    -- mason-null-ls.nivm
+    -- https://github.com/jay-babu/mason-null-ls.nvim
+    -- Allows none-ls to use clients installed by mason.
+    {
+      'jay-babu/mason-null-ls.nvim',
+      cmd = {
+        'NullLsInstall',
+        'NullLsUninstall',
+        'NoneLsInstall',
+        'NoneLsUninstall',
+      },
+      opts = { handlers = {} },
+    },
 
-    -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
-    -- used for completion, annotations and signatures of Neovim apis
-    { 'folke/neodev.nvim', opts = {} },
+    --  none-ls [lsp code formatting]
+    --  https://github.com/nvimtools/none-ls.nvim
+    {
+      'nvimtools/none-ls.nvim',
+      dependencies = { 'jay-babu/mason-null-ls.nvim' },
+      event = 'User BaseFile',
+      opts = {},
+    },
+    --  garbage-day.nvim [lsp garbage collector]
+    --  https://github.com/zeioth/garbage-day.nvim
+    {
+      'zeioth/garbage-day.nvim',
+      event = 'User BaseFile',
+      opts = {
+        aggressive_mode = false,
+        excluded_lsp_clients = {
+          'null-ls',
+          -- 'jdtls',
+        },
+        grace_period = (60 * 15),
+        wakeup_delay = 3000,
+        notifications = false,
+        retries = 3,
+        timeout = 1000,
+      },
+    },
   },
   config = function()
     -- In general, you have a "server" which is some tool built to understand a particular
@@ -124,7 +190,7 @@ return { -- LSP Configuration & Plugins
       html = {},
       cssls = {},
       jsonls = {},
-      jdtls = {},
+      -- jdtls = {},
       debugpy = {},
       yamlls = {},
       tsserver = {

@@ -1,4 +1,44 @@
--- Any errors while trying to install kickstart? run `:checkhealth` for more info
+-- Any errors? run `:checkhealth` for more info
+vim.opt.expandtab = true -- Enable the use of space in tab.
+
+vim.opt.termguicolors = true -- Enable 24-bit RGB color in the TUI.
+vim.opt.virtualedit = 'block' -- Allow going past end of line in visual block mode.
+vim.opt.writebackup = false -- Disable making a backup before overwriting a file.
+vim.opt.shada = "!,'1000,<50,s10,h" -- Remember the last 1000 opened files
+vim.opt.laststatus = 3 -- Globalstatus.
+vim.opt.linebreak = true -- Wrap lines at'breakat'.
+vim.opt.preserveindent = true -- Preserve indent structure as much as possible.
+vim.opt.pumheight = 10 -- Height of the pop up menu.
+-- vim.opt.showtabline = 2 -- always display tabline.
+vim.opt.signcolumn = 'yes' -- Always show the sign column.
+vim.opt.smartindent = false -- Smarter autoindentation.
+vim.opt.splitbelow = true -- Splitting a new window below the current one.
+vim.opt.splitright = true -- Splitting a new window at the right of the current one.
+vim.opt.tabstop = 2 -- Number of space in a tab.
+
+vim.opt.colorcolumn = '80' -- PEP8 like character limit vertical bar.
+vim.opt.autochdir = true -- Use current file dir as working dir (See project.nvim).
+vim.opt.swapfile = false -- Ask what state to recover when opening a file that was not saved.
+-- fold
+vim.opt.foldenable = true -- Enable fold for nvim-ufo.
+vim.opt.foldlevel = 99 -- set highest foldlevel for nvim-ufo.
+vim.opt.foldlevelstart = 99 -- Start with all code unfolded.
+vim.opt.foldcolumn = '1' -- Show foldcolumn in nvim 0.9+.
+
+vim.g.big_file = { size = 1024 * 100, lines = 10000 } -- For files bigger than this, disable 'treesitter' (+100kb).
+vim.g.autoformat_enabled = false -- Enable auto formatting at start.
+vim.g.autopairs_enabled = false -- Enable autopairs at start.
+vim.g.cmp_enabled = true -- Enable completion at start.
+vim.g.codelens_enabled = true -- Enable automatic codelens refreshing for lsp that support it.
+vim.g.diagnostics_mode = 3 -- Set code linting (0=off, 1=only show in status line, 2=virtual text off, 3=all on).
+vim.g.icons_enabled = true -- Enable icons in the UI (disable if no nerd font is available).
+vim.g.inlay_hints_enabled = false -- Enable always show function parameter names.
+vim.g.lsp_round_borders_enabled = true -- Enable round borders for lsp hover and signatureHelp.
+vim.g.lsp_signature_enabled = true -- Enable automatically showing lsp help as you write function parameters.
+vim.g.notifications_enabled = true -- Enable notifications.
+vim.g.semantic_tokens_enabled = true -- Enable lsp semantic tokens at start.
+vim.g.url_effect_enabled = true -- Highlight URLs with an underline effect.
+
 -- See `:help mapleader`
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -9,11 +49,7 @@ vim.g.have_nerd_font = false
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 --  For more options, you can see `:help option-list`
-
--- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, for help with jumping.
---  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -23,8 +59,6 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
@@ -36,6 +70,7 @@ vim.opt.undofile = true
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.infercase = true -- Infer cases in keyword completion.
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
@@ -46,10 +81,6 @@ vim.opt.updatetime = 250
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
-
--- Configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace in the editor.
 --  See `:help 'list'`
@@ -126,25 +157,17 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
---
---  To check the current status of your plugins, run
---    :Lazy
---
---  You can press `?` in this menu for help. Use `:q` to close the window
---
---  To update plugins, you can run
---    :Lazy update
---
-require('lazy').setup({
+--  To update plugins, you can run :Lazy update
+require('lazy').setup({ -- PLUGINS
+  -- To import one plugin use require
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
-
-  --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
+  -- or import a group of plugins
   { import = 'ui' },
   { import = 'themes' },
   { import = 'plugins' },
-  { import = 'plugins.languages' },
-}, {
+  -- { import = 'plugins.languages' },
+}, { -- OPTIONS
   ui = {
     -- If you have a Nerd Font, set icons to an empty table which will use the
     -- default lazy.nvim defined Nerd Font icons otherwise define a unicode icons table

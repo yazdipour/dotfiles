@@ -9,8 +9,6 @@ return {
       {
         'L3MON4D3/LuaSnip',
         build = (function()
-          -- Build Step is needed for regex support in snippets
-          -- This step is not supported in many windows environments
           -- Remove the below condition to re-enable on windows
           if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
             return
@@ -29,13 +27,10 @@ return {
           -- },
         },
       },
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds other completion capabilities.
-      --  nvim-cmp does not ship with all sources by default. They are split
-      --  into multiple repos for maintenance purposes.
+      -- Adds other completion capabilities sources.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
     },
     config = function()
       -- See `:help cmp`
@@ -91,9 +86,9 @@ return {
           --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         },
         sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          { name = 'nvim_lsp', priority = 1000 },
+          { name = 'luasnip', priority = 750 },
+          { name = 'path', priority = 250 },
         },
       }
     end,
