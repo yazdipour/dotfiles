@@ -21,7 +21,7 @@ return { -- Highlight, edit, and navigate code
       'go',
     },
     -- Autoinstall languages that are not installed
-    auto_install = false,
+    auto_install = true,
     highlight = {
       enable = true,
       -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
