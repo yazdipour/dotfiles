@@ -60,7 +60,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
           hidden = true, -- Show hidden files
           ignore = { '.git', 'node_modules', 'vendor' },
           prompt_prefix = ' ',
-          find_command = { 'fd', '-h' },
         },
         colorscheme = {
           enable_preview = true,
