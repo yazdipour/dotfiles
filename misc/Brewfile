@@ -34,6 +34,7 @@ brew "tealdeer"
 brew "ripgrep"
 brew "fzf"
 brew "joshmedeski/sesh/sesh"
+brew "lf"
 
 # dev tools
 brew "lazygit"
