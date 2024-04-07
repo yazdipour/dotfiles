@@ -35,6 +35,7 @@ brew "ripgrep"
 brew "fzf"
 brew "joshmedeski/sesh/sesh"
 brew "difftastic"
+brew "lf"
 
 # dev tools
 brew "lazygit"
