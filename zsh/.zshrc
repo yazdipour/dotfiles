@@ -108,6 +108,7 @@ alias gita='git add '
 alias gitm='git commit -m '
 alias gitl='git log --graph --oneline --decorate'
 alias gitundo='git reset --soft HEAD~1' # 
+alias gitempty='git commit --allow-empty -m "fix: Trigger rebuild"'
 
 # DOCKER
 alias dockstopall='docker stop $(docker ps -q)' #stop all containers
