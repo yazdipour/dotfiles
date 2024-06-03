@@ -18,7 +18,10 @@ export ANTIGEN="$HOME/.config/antigen/.antigenrc" # antigen - if fckd? rm -rf ~/
 rm ~/.antigen/.lock -f
 source ~/.config/antigen/antigen.zsh
 antigen init $ANTIGEN
-
+# AWS STUFF
+export AWS_CONFIG_PATH=$HOME/.aws
+export AWS_PROFILE=saml
+export AWS_REGION=us-east-1
 # --- alias ---
 # CONFIG
 alias editt='v ~/.tmux.conf'
@@ -123,3 +126,7 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(gh copilot alias -- zsh)"
 
+# HIST
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
