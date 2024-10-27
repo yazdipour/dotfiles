@@ -36,6 +36,7 @@ brew "fzf"
 brew "joshmedeski/sesh/sesh"
 brew "difftastic"
 brew "lf"
+brew "yazi"
 
 # dev tools
 brew "lazygit"
