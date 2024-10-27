@@ -87,6 +87,7 @@ winget install -e --id=Python.Python.3.10
 winget install -e --id=JetBrains.IntelliJIDEA.Community
 winget install -e --id=Microsoft.Sysinternals.ProcessExplorer
 winget install WerWolv.ImHex
+winget install GlazeWM
 scoop install k9s
 scoop install terraform
 choco install kubernetes-helm -y
