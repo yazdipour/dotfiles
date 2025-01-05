@@ -3,7 +3,7 @@ tap "homebrew/bundle"
 
 # necassary-stuff
 brew "stow"
-brew "zsh"
+brew "fish"
 brew "tmux"
 
 # vim

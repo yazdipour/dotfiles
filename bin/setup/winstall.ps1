@@ -103,3 +103,5 @@ pip install yt-dlp
 gh auth login --web -h github.com
 gh extension install github/gh-copilot
 gh copilot alias --help # To help you with the alias in powershell
+
+scoop install unar jq poppler fd ripgrep fzf zoxide yazi
