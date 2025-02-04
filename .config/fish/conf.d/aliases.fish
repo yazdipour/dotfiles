@@ -2,6 +2,7 @@ alias lzg='lazygit'
 alias lzd='lazydocker'
 # Config aliases
 alias editt='$EDITOR ~/.tmux.conf'
+alias editv='$EDITOR ~/.config/nvim/'
 alias editp='$EDITOR ~/.config/fish/; source ~/.config/fish/config.fish'
 
 # OS aliases
