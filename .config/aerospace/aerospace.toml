@@ -7,7 +7,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -32,7 +32,6 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-on-focus-changed = ['move-mouse window-lazy-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -80,29 +79,12 @@ alt-shift-p = 'resize smart +50'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-alt-1 = 'workspace 1'
+# alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
+alt-1 = ['exec-and-forget open -a /Applications/Microsoft\ Edge.app', 'workspace 1']
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
-alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
-alt-7 = 'workspace 7'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
-alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-alt-b = 'workspace B'
-alt-c = 'workspace C'
-alt-d = 'workspace D'
-alt-e = 'workspace E'
-alt-q = 'workspace Q'
-alt-r = 'workspace R'
-alt-s = 'workspace S'
-#alt-t = 'workspace T'
-alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'
-alt-v = 'workspace V'
-#alt-w = 'workspace W'
-alt-x = 'workspace X'
-alt-z = 'workspace Z'
+alt-5 = ['exec-and-forget open -a /Applications/Ghostty.app', 'workspace 5']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -110,23 +92,6 @@ alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
 alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
 alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
 alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
-alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
-alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
-alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
-alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
-alt-shift-a = ['move-node-to-workspace A', 'workspace A']
-alt-shift-b = ['move-node-to-workspace B', 'workspace B']
-alt-shift-c = ['move-node-to-workspace C', 'workspace C']
-alt-shift-d = ['move-node-to-workspace D', 'workspace D']
-alt-shift-e = ['move-node-to-workspace E', 'workspace E']
-alt-shift-q = ['move-node-to-workspace Q', 'workspace Q']
-alt-shift-r = ['move-node-to-workspace R', 'workspace R']
-alt-shift-s = ['move-node-to-workspace S', 'workspace S']
-alt-shift-t = ['move-node-to-workspace T', 'workspace T']
-alt-shift-v = ['move-node-to-workspace V', 'workspace V']
-#alt-shift-w = ['move-node-to-workspace W', 'workspace W']
-alt-shift-x = ['move-node-to-workspace X', 'workspace X']
-alt-shift-z = ['move-node-to-workspace Z', 'workspace Z']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -136,20 +101,20 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 
-alt-ctrl-f = 'fullscreen'
-alt-ctrl-shift-f = 'layout floating tiling'
+alt-f = 'fullscreen'
+alt-shift-f = 'layout floating tiling'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace T'
+run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = 'move-node-to-workspace C'
+run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.edgemac'
-run = 'move-node-to-workspace B'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'ru.keepcoder.Telegram'
@@ -166,6 +131,19 @@ run = ['layout floating']
 [[on-window-detected]]
 if.app-name-regex-substring = 'camera'
 run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'zoom'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'toggl'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'todoist'
+run = 'layout floating'
+
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
