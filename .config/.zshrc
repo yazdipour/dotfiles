@@ -94,7 +94,8 @@ alias pip3='sudo /usr/bin/pip3'
 alias c='code'
 alias cr='code -r'
 alias hx='hexcurse'
-alias lzgt='lazygit'
+alias lzg='lazygit'
+alias lzd='lazydocker'
 
 # GIT
 alias gitc='git clone'
