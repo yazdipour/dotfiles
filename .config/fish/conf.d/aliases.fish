@@ -1,7 +1,8 @@
+alias lzg='lazygit'
+alias lzd='lazydocker'
 # Config aliases
 alias editt='$EDITOR ~/.tmux.conf'
-alias editv='$EDITOR ~/.config/fish/'
-alias editp='$EDITOR ~/.config/fish/config.fish; source ~/.config/fish/config.fish'
+alias editp='$EDITOR ~/.config/fish/; source ~/.config/fish/config.fish'
 
 # OS aliases
 alias q='exit'
@@ -55,8 +56,11 @@ alias gitundo='git reset --soft HEAD~1'
 alias gitempty='git commit --allow-empty -m "fix: Trigger rebuild"'
 
 # Docker aliases
-alias dockstopall='docker stop (docker ps -q)'
-alias dockrmall='docker rm (docker ps -q)'
+alias dcsall='docker stop (docker ps -q)'
+alias dcrmall='docker rm (docker ps -q)'
 alias dc='docker-compose'
 alias dcu='docker-compose up dependencies'
 alias dcs='docker-compose stop'
+function dcf
+    docker compose -f $argv up
+end
