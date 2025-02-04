@@ -1,6 +1,4 @@
 openaiapirc
 .DS_Store
-tmux/plugins/
-raycast
 nvim/.config/nvim/lazy-lock.json
 antigen/.config/antigen/.antigenrc.zwc
