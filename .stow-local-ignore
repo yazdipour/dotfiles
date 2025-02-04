@@ -1,7 +1,8 @@
 \.git
 misc
-#LICENSE
+LICENSE
 ^/.*\.org
-
-\etc
-/etc
+.stowrc
+README.md
+.gitignore
+.github
