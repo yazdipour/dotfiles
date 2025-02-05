@@ -1,17 +1,9 @@
-# --- path ---
+# Source profile file
+source ~/.profile
+
+# --- ENV ---
 export EDITOR=nvim
 export HOMEBREW_EDITOR=nvim
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$PATH:$HOME/.config/bin"
-export PATH="$PATH:$BUN_INSTALL/bin"
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/aws-tools/"
-export PATH="$PATH:$HOME/.cargo/bin"
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 # ANTIGEN
 export DISABLE_UNTRACKED_FILES_DIRTY="true" # disable dirty check for git repo to speed up zsh
 export ANTIGEN="$HOME/.config/antigen/.antigenrc" # antigen - if fckd? rm -rf ~/.antigen/ 
@@ -84,8 +76,8 @@ export FZF_CTRL_T_OPTS='--preview "bat -n --color=always {}"'
 export FZF_ALT_C_OPTS="
   --walker-skip .git,node_modules,target
   --preview 'tree -C {}'"
-bindkey -s ^p 'sesh connect $(sesh list | fzf-tmux) \n'
-bindkey -s ^f 'v ^t'
+bindkey -s '^p' "sesh connect \$(sesh list | fzf-tmux)\\n"
+bindkey -s '^f' "v ^t"
 
 # DEV
 alias -s {md,txt,js,css,html,htm,c,cpp}=nvim
@@ -93,7 +85,6 @@ alias py='python'
 alias pip3='sudo /usr/bin/pip3'
 alias c='code'
 alias cr='code -r'
-alias hx='hexcurse'
 alias lzg='lazygit'
 alias lzd='lazydocker'
 
@@ -112,7 +103,7 @@ alias gita='git add '
 alias gitm='git commit -m '
 alias gitl='git log --graph --oneline --decorate'
 alias gitundo='git reset --soft HEAD~1' # 
-alias gitempty='git commit --allow-empty -m "fix: Trigger rebuild"'
+alias gitempty='git commit --allow-empty -m "fix: Trigger release"'
 
 # DOCKER
 alias dockstopall='docker stop $(docker ps -q)' #stop all containers
