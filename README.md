@@ -2,7 +2,9 @@
 
 ```sh
 git clone --depth=1 https://github.com/yazdipour/dotfiles ~/dotfiles
-cd ~/dotfiles; stow -v 2 -t $HOME/.config .config/
+cd ~/dotfiles; stow -v 2 .
+# or
+stow -v 2 -t $HOME/.config .config/
 ```
 
 ## Helper
