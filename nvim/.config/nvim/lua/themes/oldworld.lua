@@ -1,3 +1,6 @@
+if true then
+  return {}
+end
 return {
     "dgox16/oldworld.nvim",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
