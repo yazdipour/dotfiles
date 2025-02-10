@@ -1,3 +1,6 @@
+function lzv
+    nvim --cmd 'set runtimepath+=~/.config/nvim-lazy' -u ~/.config/nvim-lazy/init.lua
+end 
 alias lzg='lazygit'
 alias lzd='lazydocker'
 # Config aliases
