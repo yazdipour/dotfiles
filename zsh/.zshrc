@@ -42,6 +42,7 @@ alias cat='bat --style=plain'
 
 # UTILS
 #alias find='fd'
+alias a='yazi'
 alias about='neofetch'
 alias version='lsb_release -a'
 alias p1='ping 1.1.1.1'

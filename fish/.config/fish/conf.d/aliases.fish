@@ -35,6 +35,7 @@ alias uziptar='tar -xzf'
 alias dif='diff -yZB'
 alias dl='aria2c'
 alias v='nvim'
+alias a='yazi'
 
 # Tmux aliases
 alias t='sesh connect (sesh list | fzf-tmux)'
