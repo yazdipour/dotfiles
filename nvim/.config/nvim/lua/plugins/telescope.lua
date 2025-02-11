@@ -96,10 +96,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
         },
-        file_browser = {
-          -- disables netrw and use telescope-file-browser in its place
-          hijack_netrw = true,
-        },
+        -- file_browser = {
+        --   -- disables netrw and use telescope-file-browser in its place
+        --   hijack_netrw = true,
+        -- },
         smart_open = {
           cwd_only = true,
           filename_first = true,
@@ -110,7 +110,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- Enable telescope extensions, if they are installed
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
-    pcall(require('telescope').load_extension, 'file_browser')
+    -- pcall(require('telescope').load_extension, 'file_browser')
 
     -- [[ Keymaps ]]
     local set = vim.keymap.set
@@ -118,8 +118,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
     -- <Tab> select files
     -- <S-Tab> de-select files
     -- <backspace> move to parent
-    set('n', '<space>fp', ':Telescope file_browser<CR>', { desc = '[F]ile Browser in [P]roject level' })
-    set('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[F]ile [B]rowser in current buffer' })
+    -- set('n', '<space>fp', ':Telescope file_browser<CR>', { desc = '[F]ile Browser in [P]roject level' })
+    -- set('n', '<leader>fb', ':Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = '[F]ile [B]rowser in current buffer' })
 
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
