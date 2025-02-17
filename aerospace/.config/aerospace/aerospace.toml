@@ -16,7 +16,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
-accordion-padding = 30
+accordion-padding = 8
 
 # Possible values: tiles|accordion
 default-root-container-layout = 'tiles'
@@ -45,7 +45,7 @@ preset = 'qwerty'
 
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 10   
+inner.horizontal = 10
 inner.vertical =   10   
 outer.left =       10   
 outer.bottom =     10   
@@ -113,6 +113,10 @@ if.app-id = 'com.microsoft.VSCode'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
+if.app-name-regex-substring = 'zed'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.edgemac'
 run = 'move-node-to-workspace 2'
 
@@ -124,7 +128,7 @@ run = 'move-node-to-workspace 2'
 if.app-name-regex-substring = 'finder'
 run = ['layout floating']
 
-[[on-window-detected]]                          
+[[on-window-detected]]
 if.app-name-regex-substring = 'Preview'
 run = ['layout floating']
 
