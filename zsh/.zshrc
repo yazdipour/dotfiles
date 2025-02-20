@@ -55,8 +55,8 @@ alias countfile='ls -l . | egrep -c '\''^-'\'''
 alias v='nvim'
 
 # TMUX
-alias t='sesh connect $(sesh list | fzf-tmux)'
-alias ta='tmux attach'
+alias t='tmux'
+alias ta='sesh connect $(sesh list | fzf-tmux)'
 alias tl='tmux list-sessions'
 alias tk='tmux kill-session -t'
 alias ts='tmux switch -t'
