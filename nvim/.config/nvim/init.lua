@@ -164,7 +164,6 @@ require('lazy').setup({ -- PLUGINS
   -- require 'kickstart.plugins.indent_line',
   -- or import a group of plugins
   { import = 'ui' },
-  { import = 'themes' },
   { import = 'plugins' },
   { import = 'plugins.languages' },
 }, { -- OPTIONS
