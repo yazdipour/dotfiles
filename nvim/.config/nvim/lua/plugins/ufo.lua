@@ -1,3 +1,7 @@
+-- DISABLE THIS PLUGIN
+if true then
+  return {}
+end
 return {
   "kevinhwang91/nvim-ufo",
   enabled = true,

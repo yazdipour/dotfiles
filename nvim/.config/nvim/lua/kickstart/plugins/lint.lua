@@ -55,6 +55,9 @@ return {
           end
         end,
       })
+      vim.keymap.set('n', '<leader>fl', function()
+        require('lint').try_lint()
+      end, { desc = '[F]ile [L]int' })
     end,
   },
 }
