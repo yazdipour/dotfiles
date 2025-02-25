@@ -44,3 +44,4 @@ vim.g.url_effect_enabled = true
 -- Disable right-click popup and copy text instead
 vim.opt.mousemodel = ''
 vim.keymap.set('n', '<RightMouse>', '"+y', { desc = 'Copy text on right-click' })
+vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = false })
