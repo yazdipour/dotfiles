@@ -3,3 +3,4 @@ theme = Ayu
 background = #080A0D
 background-opacity = 0.95
 macos-titlebar-style = tabs
+mouse-hide-while-typing = true
