@@ -31,8 +31,9 @@ return {
       -- Keymaps for buffer navigation
       vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>', { desc = 'Previous buffer' })
       vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>', { desc = 'Next buffer' })
-      vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { desc = 'Close buffer' })
+      vim.keymap.set('n', '<leader>bc', ':BufferLinePickClose<CR>', { desc = 'Pick Close buffer' })
       vim.keymap.set('n', '<leader>bb', ':BufferLinePick<CR>', { desc = 'Pick buffer' })
+      vim.keymap.set('n', '<leader>bx', ':bdelete!<CR>:enew<CR>', { desc = 'Close buffer' })
     end,
   }
 }
