@@ -42,9 +42,16 @@ return { -- Autoformat
     {
       '<leader>ff',
       function()
-        require('conform').format()
+        require('conform').format(
+          {
+            lsp_fallback = true,
+            async = false,
+            timeout_ms = 500
+          }
+        )
       end,
-      desc = '[F]ile [F]ormat',
+      desc = '[F]ormat',
+      mode = { 'n', 'v' }, -- Add visual mode
     },
   },
 }
