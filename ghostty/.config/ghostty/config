@@ -1,4 +1,5 @@
 clipboard-trim-trailing-spaces = true
 theme = Ayu
 background = #080A0D
-macos-titlebar-style=transparent
+background-opacity = 0.95
+macos-titlebar-style = tabs
