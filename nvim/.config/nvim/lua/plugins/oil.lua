@@ -3,14 +3,11 @@ return {
   config = function()
     require("oil").setup({
         default_file_explorer = true,
+        keymaps = {
+          ["q"] = { "actions.close", mode = "n" },
+        }
     })
-    vim.keymap.set("n", "<leader>-", function()
-      if vim.bo.filetype == "oil" then
-        vim.cmd("close")
-      else
-        vim.cmd("vsplit | Oil")
-      end
-    end, { desc = "Toggle Oil sidebar" })
+    vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
   end,
 }
 -- Oil default keybindings:
