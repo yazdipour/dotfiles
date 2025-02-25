@@ -39,3 +39,8 @@ vim.g.url_effect_enabled = true
 -- vim.opt.foldlevel = 99 -- set highest foldlevel for nvim-ufo.
 -- vim.opt.foldlevelstart = 99 -- Start with all code unfolded.
 -- vim.opt.foldcolumn = '1' -- Show foldcolumn in nvim 0.9+.
+
+-- MOUSE
+-- Disable right-click popup and copy text instead
+vim.opt.mousemodel = ''
+vim.keymap.set('n', '<RightMouse>', '"+y', { desc = 'Copy text on right-click' })
