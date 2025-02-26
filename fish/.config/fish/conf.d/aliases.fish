@@ -1,2 +1,2 @@
 # Source common aliases
-source ~/.aliases
+source ~/.shared_aliases

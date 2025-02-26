@@ -1,18 +1,23 @@
-# Source common aliases
-source ~/.aliases
 
 # Source profile file
-source ~/.profile
+source ~/.shared_profile
+
+# Source common aliases
+source ~/.shared_aliases
+
 
 # --- ENV ---
-export EDITOR=nvim
-export HOMEBREW_EDITOR=nvim
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 # ANTIGEN
 export DISABLE_UNTRACKED_FILES_DIRTY="true" # disable dirty check for git repo to speed up zsh
 export ANTIGEN="$HOME/.config/antigen/.antigenrc" # antigen - if fckd? rm -rf ~/.antigen/ 
 rm ~/.antigen/.lock -f
 source ~/.config/antigen/antigen.zsh
 antigen init $ANTIGEN
+
 # AWS STUFF
 export AWS_CONFIG_PATH=$HOME/.aws
 export AWS_PROFILE=saml

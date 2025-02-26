@@ -1,7 +1,3 @@
-# Core environment variables
-set -gx EDITOR nvim
-set -gx HOMEBREW_EDITOR nvim
-
 if status is-interactive
     set -U fish_greeting # disable fish greeting
 
