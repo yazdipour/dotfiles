@@ -1,12 +1,10 @@
-function lzv
-    nvim --cmd 'set runtimepath+=~/.config/nvim-lazy' -u ~/.config/nvim-lazy/init.lua
-end 
 alias lzg='lazygit'
 alias lzd='lazydocker'
 # Config aliases
 alias editt='$EDITOR ~/.tmux.conf'
 alias editv='$EDITOR ~/.config/nvim/'
-alias editp='$EDITOR ~/.config/fish/; source ~/.config/fish/config.fish'
+alias editf='$EDITOR ~/.config/fish/; source ~/.config/fish/config.fish'
+alias editp='v ~/.zshrc; . ~/.zshrc'
 
 # OS aliases
 alias q='exit'
@@ -66,6 +64,5 @@ alias dcrmall='docker rm (docker ps -q)'
 alias dc='docker-compose'
 alias dcu='docker-compose up dependencies'
 alias dcs='docker-compose stop'
-function dcf
-    docker compose -f $argv up
-end
+
+alias mvnc='mvn clean install -DskipTests'
