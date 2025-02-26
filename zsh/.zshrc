@@ -1,3 +1,6 @@
+# Source common aliases
+source ~/.aliases
+
 # Source profile file
 source ~/.profile
 
@@ -14,52 +17,6 @@ antigen init $ANTIGEN
 export AWS_CONFIG_PATH=$HOME/.aws
 export AWS_PROFILE=saml
 export AWS_REGION=us-east-1
-# --- alias ---
-# CONFIG
-alias editt='v ~/.tmux.conf'
-alias editant="v $ANTIGEN"
-alias editv='v ~/.config/nvim/'
-alias editp='v ~/.zshrc; . ~/.zshrc'
-alias editrepo='sudo vi /etc/apt/sources.list'
-alias lsrepo='cd /etc/apt/sources.list.d/; ls'
-
-# OS
-alias q='exit'
-alias cls='clear'
-alias l='lsd -laF'
-alias la='lsd -A'
-alias ll='lsd -alF'
-alias lt='lsd --tree'
-alias ltt='lsd -alF --tree'
-alias cp='cp --interactive'
-alias mv='mv --interactive'
-alias rm='rm --interactive'
-alias pt='procs --tree'
-alias pw='procs --watch'
-alias wport='netstat -ltnp'
-alias sizedir='du -shc ./*'
-alias cat='bat --style=plain'
-
-# UTILS
-#alias find='fd'
-alias y='yazi'
-alias about='neofetch'
-alias version='lsb_release -a'
-alias p1='ping 1.1.1.1'
-alias debi='sudo dpkg -i'
-alias grep='rg'
-alias uziptar='tar -xzf'
-alias dif='diff -yZB'
-alias dl='aria2c'
-alias countfile='ls -l . | egrep -c '\''^-'\'''
-alias v='nvim'
-
-# TMUX
-alias t='tmux'
-alias ta='sesh connect $(sesh list | fzf-tmux)'
-alias tl='tmux list-sessions'
-alias tk='tmux kill-session -t'
-alias ts='tmux switch -t'
 
 # FZF
 # CTRL+R: search history
@@ -79,39 +36,6 @@ export FZF_ALT_C_OPTS="
   --preview 'tree -C {}'"
 bindkey -s '^p' "sesh connect \$(sesh list | fzf-tmux)\\n"
 bindkey -s '^f' "v ^t"
-
-# DEV
-alias -s {md,txt,js,css,html,htm,c,cpp}=nvim
-alias py='python'
-alias pip3='sudo /usr/bin/pip3'
-alias c='code'
-alias cr='code -r'
-alias lzg='lazygit'
-alias lzd='lazydocker'
-
-# GIT
-alias gitc='git clone'
-alias gits='git status'
-function gitlog() { git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative $@; }
-alias gitpull='git pull origin '
-alias gitma='git commit -a -m '
-alias gitp='git push origin '
-alias granch='git branch '
-alias gitch='git checkout '
-alias gitdf='git diff'
-alias gitd='git diff HEAD~'
-alias gita='git add '
-alias gitm='git commit -m '
-alias gitl='git log --graph --oneline --decorate'
-alias gitundo='git reset --soft HEAD~1' # 
-alias gitempty='git commit --allow-empty -m "fix: Trigger release"'
-
-# DOCKER
-alias dockstopall='docker stop $(docker ps -q)' #stop all containers
-alias dockrmall='docker rm $(docker ps -q)'
-alias dc='docker-compose'
-alias dcu='docker-compose up dependencies'
-alias dcs='docker-compose stop'
 
 # -- eval ---
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

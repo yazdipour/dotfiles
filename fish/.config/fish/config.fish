@@ -1,3 +1,6 @@
+# Source common aliases
+source ~/.aliases
+
 fish_add_path /opt/homebrew/bin
 
 # Add your existing paths
