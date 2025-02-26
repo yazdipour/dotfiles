@@ -46,7 +46,7 @@ bindkey -s '^f' "v ^t"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
-eval "$(gh copilot alias -- zsh)"
+# eval "$(gh copilot alias -- zsh)"
 
 # HIST
 HISTFILE=~/.zsh_history
