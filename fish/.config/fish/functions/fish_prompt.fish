@@ -69,9 +69,9 @@ function fish_prompt
     end
 
     set -l arrow "$arrow_color➜ "
-    if fish_is_root_user
-        set arrow "$arrow_color# "
-    end
+    # if fish_is_root_user
+    #     set arrow "$arrow_color# "
+    # end
 
     set -l cwd $cyan(basename (prompt_pwd))
 
