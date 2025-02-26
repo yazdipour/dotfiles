@@ -1,5 +1,4 @@
 # DEV
-alias -s {md,txt,js,css,html,htm,c,cpp}=nvim
 alias py='python'
 alias pip3='sudo /usr/bin/pip3'
 alias c='code'

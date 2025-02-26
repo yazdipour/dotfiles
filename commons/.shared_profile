@@ -1,0 +1,4 @@
+source ~/.profile
+
+export EDITOR=nvim
+export HOMEBREW_EDITOR=nvim
