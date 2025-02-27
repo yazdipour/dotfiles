@@ -14,6 +14,7 @@ alias editt='$EDITOR ~/.tmux.conf'
 alias editv='$EDITOR ~/.config/nvim/'
 alias editf='$EDITOR ~/.config/fish/; source ~/.config/fish/config.fish'
 alias editp='v ~/.zshrc; . ~/.zshrc'
+alias edita='v ~/.shared_aliases'
 
 # Ubuntu aliases
 alias debi='sudo dpkg -i'
