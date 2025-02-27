@@ -1,6 +1,8 @@
 # DEV
 alias py='python'
 alias pip3='sudo /usr/bin/pip3'
+alias ci='code-insiders'
+alias cir='code-insiders -r'
 alias c='code'
 alias cr='code -r'
 alias lzg='lazygit'
