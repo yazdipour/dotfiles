@@ -13,6 +13,7 @@ return {
       require("ayu").setup({
         overrides = {
           LineNr = { fg = "#aaaaaa" },
+          NonText = { fg = "#777777" },
           CursorLineNr = { fg = "#666666" }, -- Current line number color.
           Normal = { bg = "None" },
         },
