@@ -5,6 +5,7 @@ source ~/.shared_profile
 # Source common aliases
 source ~/.shared_aliases
 
+alias ta='sesh connect "$(sesh list | fzf-tmux)"'
 
 # --- ENV ---
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
