@@ -1,6 +1,6 @@
 {
   "keyMappings": "#map h goBack\nmap [ previousTab\nmap ] nextTab",
-  "newTabUrl": "pages/blank.html",
+  "newTabUrl": "about:newtab",
   "scrollStepSize": 100,
   "grabBackFocus": true,
   "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\ng: https://www.google.com/search?q=%s Google\ngh: https://github.com/search?q=%s Github\ny: https://www.youtube.com/results?search_query=%s Youtube\ngm: https://www.google.com/maps?q=%s Google maps\nb: https://www.bing.com/search?q=%s Bing\nd: https://duckduckgo.com/?q=%s DuckDuckGo\naz: https://www.amazon.de/s/?field-keywords=%s",
