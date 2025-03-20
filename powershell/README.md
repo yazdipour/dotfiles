@@ -1,8 +1,4 @@
-## Powershell Profile
-
-[▶ My Powershell Profile](profile.ps0)
-
-To initiate powershell profile
+# Powershell Profile
 
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted
@@ -11,3 +7,4 @@ notepad $profile
 # To Update
 . $profile
 ```
+
