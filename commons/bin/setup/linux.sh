@@ -33,3 +33,7 @@ sudo update-alternatives --config editor
 gh auth login --web -h github.com
 gh extension install github/gh-copilot
 gh copilot alias --help # to see the alias commands
+
+# Cargo
+cargo install somo
+sudo ln -s ~/.cargo/bin/somo /usr/local/bin/somo # try sudo somo
