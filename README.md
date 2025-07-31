@@ -23,3 +23,5 @@ stow <dir>
 sudo apt-get install dos2unix
 dos2unix .zshrc
 ```
+
+WIP: Trying to migrate and merge https://omarchy.org/ stuff.
