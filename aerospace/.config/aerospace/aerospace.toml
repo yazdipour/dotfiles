@@ -46,11 +46,11 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 10
-inner.vertical =   10   
-outer.left =       10   
-outer.bottom =     10   
-outer.top =        10   
-outer.right =      10   
+inner.vertical = 10
+outer.left = 10
+outer.bottom = 10
+outer.top = 10
+outer.right = 10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -80,11 +80,12 @@ alt-shift-p = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 # alt-a = 'workspace A' # In your config, you can drop workspace bindings that you don't need
-alt-1 = ['exec-and-forget open -a /Applications/Ghostty.app', 'workspace 1']
+alt-1 = 'workspace 1'
 alt-2 = ['workspace 2']
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
+alt-6 = 'workspace 6'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -92,6 +93,7 @@ alt-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
 alt-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
 alt-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
 alt-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+alt-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 alt-tab = 'workspace-back-and-forth'
@@ -106,6 +108,10 @@ alt-shift-f = 'layout floating tiling'
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'dev.warp.Warp-Stable'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
@@ -127,6 +133,10 @@ run = 'move-node-to-workspace 2'
 [[on-window-detected]]
 if.app-id = 'com.microsoft.edgemac'
 run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'ticktick'
+run = 'move-node-to-workspace 6'
 
 # [[on-window-detected]]
 # if.app-id = 'ru.keepcoder.Telegram'
@@ -152,17 +162,15 @@ run = 'layout floating'
 if.app-name-regex-substring = 'toggl'
 run = 'layout floating'
 
-[[on-window-detected]]
-if.app-name-regex-substring = 'todoist'
-run = 'layout floating'
-
-
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
