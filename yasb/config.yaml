@@ -38,10 +38,11 @@ bars:
       ]
       center: [
           "clock",
-          "pomodoro"
+          "pomodoro",
+          "taskbar"
         ]
       right: [
-          "taskbar",
+          "traffic",
           "memory",
           "media",
           "volume",
@@ -119,7 +120,7 @@ widgets:
     options:
       label: "<span>\uf017</span>{%H:%M}"
       label_alt: "<span>\uf017</span>{%A, %B %d. %Y %H:%M}"
-      locale: "hu_HU"
+      locale: "de_DE"
       timezones: []
       calendar:
         round_corners: true
@@ -341,3 +342,26 @@ widgets:
         on_left: "toggle_media_menu"
         on_middle: "do_nothing"
         on_right: "toggle_label"
+  traffic:
+    type: "yasb.traffic.TrafficWidget"
+    options:
+      label: "\ueb01 \ueab4 {download_speed} | \ueab7 {upload_speed}"
+      label_alt: "Download {download_speed} | Upload {upload_speed}"
+      update_interval: 1000
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "left"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]

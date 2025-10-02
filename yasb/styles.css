@@ -718,3 +718,134 @@ Example: "Windows Media" becomes "windows-media" */
 .media-menu .app-volume-container .unmute-button {
     color: #a0a0a0;
 }
+
+/* ================= */
+/* === traffic WIDGET === */
+/* ================= */
+
+.traffic-menu {
+    background-color: rgba(24, 25, 27, 0.85);
+    min-width: 280px;
+}
+.traffic-menu .header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(24, 25, 27, 0.8);
+}
+.traffic-menu .header .title {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Segoe UI';
+    color: #ffffff
+}
+.traffic-menu .header .reset-button {
+    font-size: 11px;
+    padding: 4px 8px;
+    margin-right: 8px;
+    font-family: 'Segoe UI';
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+}
+.traffic-menu .reset-button:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .reset-button:pressed {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* Speed column styles */
+.traffic-menu .download-speed,
+.traffic-menu .upload-speed {
+    background-color: transparent;
+    padding: 4px 10px;
+    margin-right: 12px;
+    margin-left: 12px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.traffic-menu .download-speed {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.traffic-menu .speed-separator {
+    max-width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 32px 0 16px 0;
+}
+.traffic-menu .upload-speed-value,
+.traffic-menu .download-speed-value {
+    font-size: 24px;
+    font-weight: 900;
+    font-family: 'Segoe UI';
+    color: #bcc2c5;
+}
+.traffic-menu .upload-speed-unit,
+.traffic-menu .download-speed-unit {
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    padding-top: 4px;
+}
+.traffic-menu .upload-speed-placeholder,
+.traffic-menu .download-speed-placeholder {
+    color: #747474;
+    font-size: 11px;
+    font-family: 'Segoe UI';
+    padding: 0 0 4px 0;
+}
+
+/* Section and data styles */
+.traffic-menu .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7c8192;
+    margin-bottom: 4px;
+    font-family: 'Segoe UI';
+}
+.traffic-menu .session-section,
+.traffic-menu .today-section,
+.traffic-menu .alltime-section {
+    margin: 8px 8px 0 8px;
+    padding: 0 10px 10px 10px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.traffic-menu .data-text {
+    font-size: 13px;
+    color: #afb5cc;
+    padding: 2px 0;
+    font-family: 'Segoe UI';
+
+}
+.traffic-menu .data-value {
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    padding: 2px 0;
+}
+
+/* Interface and Internet info styles */
+.traffic-menu .interface-info,
+.traffic-menu .internet-info {
+    font-size: 12px;
+    color: #6f7486;
+    padding: 8px 0;
+    font-family: 'Segoe UI';
+}
+.traffic-menu .internet-info {
+    background-color: rgba(68, 68, 68, 0.1);
+}
+.traffic-menu .internet-info.connected {
+    background-color: rgba(166, 227, 161, 0.096);
+    color: #a6e3a1;
+}
+.traffic-menu .internet-info.disconnected {
+    background-color: rgba(243, 139, 168, 0.1);
+    color: #f38ba8;
+}
