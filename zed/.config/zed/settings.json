@@ -7,31 +7,46 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "project_panel": {
-    "dock": "right"
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    },
+    "model_parameters": []
+  },
+  "terminal": {
+    "env": {},
+    "font_size": 14.0
+  },
+  "base_keymap": "VSCode",
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "minimap": {
+    "show": "auto"
   },
   "git_panel": {
     "dock": "right"
   },
-  "outline_panel": {
+  "project_panel": {
     "dock": "right"
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "copilot"
   },
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
-  },
+  "cursor_blink": true,
+  "autosave": "on_focus_change",
+  "auto_indent_on_paste": true,
+  "linked_edits": true,
+  "use_on_type_format": true,
+  "show_edit_predictions": true,
+  "soft_wrap": "editor_width",
   "vim_mode": true,
-  "ui_font_size": 12,
-  "buffer_font_size": 12,
+  "ui_font_size": 14,
+  "buffer_font_size": 14.0,
   "theme": {
     "mode": "system",
-    "light": "One Light",
-    "dark": "Github Dark"
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
   }
 }
