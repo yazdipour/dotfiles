@@ -37,3 +37,6 @@ gh copilot alias --help # to see the alias commands
 # Cargo
 cargo install somo
 sudo ln -s ~/.cargo/bin/somo /usr/local/bin/somo # try sudo somo
+
+# WITR
+curl -fsSL https://raw.githubusercontent.com/pranshuparmar/witr/main/install.sh | bash
