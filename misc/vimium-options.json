@@ -1,5 +1,6 @@
 {
-  "keyMappings": "#map h goBack\nmap [ previousTab\nmap ] nextTab",
+  "keyMappings": "#map h goBack\nmap [ previousTab\nmap ] nextTab\nmap h previousTab\nmap l nextTab\nmap <c-x> restoreTab",
+  "ignoreKeyboardLayout": true,
   "scrollStepSize": 100,
   "grabBackFocus": true,
   "searchEngines": "g: https://www.google.com/search?q=%s Google\ngh: https://github.com/search?q=%s Github\ngm: https://www.google.com/maps?q=%s Google maps\ny: https://www.youtube.com/results?search_query=%s Youtube\nd: https://duckduckgo.com/?q=%s DuckDuckGo\na: https://www.amazon.de/s/?field-keywords=%s\ncg: https://chatgpt.com/?q=%s ChatGPT\nge: https://gemini.google.com/app?q=%s Gemini Pre-filled Chat\ngi: https://www.google.ai?q=%s Google AI\nc: https://chatgpt.com/?q=%s&temporary-chat=true ChatGPT Direct Chat (Temporary)\np: https://www.perplexity.ai/?q=%s Perplexity Direct Answer\nt: https://translate.google.com/?source=osdd&sl=auto&tl=en&text=%s Google Translate",
@@ -33,6 +34,10 @@
     {
       "passKeys": "",
       "pattern": "https?://game.play-cs.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://github.dev/*"
     }
   ]
 }

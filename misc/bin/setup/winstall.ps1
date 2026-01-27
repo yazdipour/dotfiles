@@ -105,3 +105,6 @@ gh extension install github/gh-copilot
 gh copilot alias --help # To help you with the alias in powershell
 
 scoop install unar jq poppler fd ripgrep fzf zoxide yazi
+
+# witr
+irm https://raw.githubusercontent.com/pranshuparmar/witr/main/install.ps1 | iex
