@@ -41,7 +41,7 @@ brew "yazi"
 # dev tools
 brew "lazygit"
 brew "gh"
-
+brew "witr"
 # Install GUI applications (macOS Only)
 # cask "visual-studio-code" # Code editor
 # Install applications from the Mac App Store
