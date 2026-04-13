@@ -1,5 +1,6 @@
 # Tap additional repositories
 tap "homebrew/bundle"
+tap "nikitabobko/tap"
 
 # necassary-stuff
 brew "stow"
@@ -42,7 +43,25 @@ brew "yazi"
 brew "lazygit"
 brew "gh"
 brew "witr"
+
 # Install GUI applications (macOS Only)
-# cask "visual-studio-code" # Code editor
-# Install applications from the Mac App Store
-# mas "Xcode" # IDE for macOS
+if OS.mac?
+  cask "ghostty"
+  cask "visual-studio-code"
+  cask "visual-studio-code@insiders"
+  cask "dockdoor"
+  cask "linearmouse"
+  cask "shottr"
+  cask "raycast"
+  cask "obsidian"
+  cask "notion"
+  cask "aerospace"
+  cask "microsoft-edge"
+  cask "onedrive"
+  cask "homerow"
+  cask "netnewswire"
+  cask "font-fira-code"
+  cask "font-jetbrains-mono"
+  cask "iina"
+  
+end
